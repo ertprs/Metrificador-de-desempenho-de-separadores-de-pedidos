@@ -5,11 +5,16 @@ const Pedidos = require('../model/pedidosapi')
 
 module.exports = {
     //LISTAGEM DE PESSOAS
-    async indexPedidosVendasapi(req, res) {
+    async indexPedidosApi(req, res) {
         console.log(req.params.id)
 
         const pedidos = await Pedidos.findAll({
-            
+            where: {
+                /* CodigoPedido: {
+                    [Op.gt]: 90269
+                } */
+                CodigoPedido: 90269
+            }
         });
 
 
