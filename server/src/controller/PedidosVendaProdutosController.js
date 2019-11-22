@@ -8,9 +8,7 @@ module.exports = {
     async indexPedidosVendaProdutos(req, res) {
         const pedidosvendaprodutos = await PedidosVendaProdutos.findAll({
             where: {
-                /* CodigoPedido: {
-                    [Op.gt]: 90269
-                } */
+               
                 CodigoPedido: 90269
             }
         });
