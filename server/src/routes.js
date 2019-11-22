@@ -12,7 +12,7 @@ const routes = express.Router();
 
 routes.get('/pedidosvenda', PedidosVendaController.indexPedidosVenda);
 
-routes.get('/pedidosapi/:id', PedidosapiController.indexPedidosVendasapi);
+routes.get('/pedidosapi/', PedidosapiController.indexPedidosVendasapi);
 
 routes.get('/pedidosvendaprodutos', PedidosVendaProdutosController.indexPedidosVendaProdutos);
 

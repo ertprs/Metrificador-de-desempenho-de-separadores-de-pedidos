@@ -7,14 +7,14 @@ module.exports = {
     //LISTAGEM DE PESSOAS
     async indexPedidosVendasapi(req, res) {
         console.log(req.params.id)
-        const pedidos = await Pedidos.findAll({
+        const pedidos = await Pedidos.findAll(/* {
             where: {
-                /* Codigo: {
+                 Codigo: {
                     [Op.gt]: 80000
-                } */
-                Codigo: req.params.id
+                } 
+                 Codigo: req.params.id
             }
-        });
+        } */ );
         
         return res.json(pedidos)
     },
