@@ -14,9 +14,9 @@ const routes = express.Router();
 routes.get('/pedidosvenda', PedidosVendaController.indexPedidosVenda);
 
 
-routes.get('/pedidosapi', PedidosapiController.indexPedidosApi);
+routes.get('/pedidosapi/:id', PedidosapiController.indexPedidosApi);
 
-routes.get('/produtosapi', ProdutosApiController.indexProdutosApi);
+routes.get('/produtosapi/:id', ProdutosApiController.indexProdutosApi);
 
 
 routes.get('/pedidosvendaprodutos', PedidosVendaProdutosController.indexPedidosVendaProdutos);

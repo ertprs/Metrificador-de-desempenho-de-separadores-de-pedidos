@@ -8,6 +8,12 @@ module.exports = {
     async indexProdutosApi(req, res) {
         console.log(req.params.id)
         const pedidos = await Pedidos.findAll({
+            where: {
+                /* CodigoPedido: {
+                    [Op.gt]: 90269
+                } */
+                CodigoPedido: req.params.id
+            }
             
         });
         
