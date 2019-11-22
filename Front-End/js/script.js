@@ -25,6 +25,9 @@ axios.get(
         $("#inputFP").val(response.data[0].FormaParcelamento);
         $("#inputVendedor").val(response.data[0].Vendedor);
         $("#inputCliente").val(response.data[0].CodigoCliente);
+        $("#inputData").val(response.data[0].Data)
+        $("#inputHora").val(response.data[0].Hora)
+        //response.data[0].Hora
 
         axios.get(
             `http://localhost:3001/produtosapi/${param}`,
