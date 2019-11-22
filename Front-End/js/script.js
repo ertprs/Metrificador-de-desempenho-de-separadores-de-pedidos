@@ -24,7 +24,23 @@ axios.get(
         $("#inputVendedor").val(response.data[0].Vendedor);
         $("#inputCliente").val(response.data[0].CodigoCliente);
 
-     
+        axios.get(
+            `http://localhost:3001/produtosapi/${param}`,
+            {}
+            )
+            .then(function(response){
+                    console.log(response)
+             let total = 0 ;
+             response.data.forEach(element => {
+                total += element.Quantidade;
+             });
+                
+             $("#inputitens").val(response.data.length);
+             $("#inputQTDtotal").val(total);
+
+            console.log(total)
+
+            })
 
 
 
