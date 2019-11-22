@@ -17,14 +17,12 @@ axios.get(
     )
     .then(function(response){
         console.log(response.data[0].CodigoCliente);
-        $("#inputCliente").val(response.data[0].CodigoCliente);
+        
         $("#inputFantasia").val(response.data[0].RazaoCliente);
         $("#inputFPg").val(response.data[0].ModalidadeCB);
         $("#inputFP").val(response.data[0].FormaParcelamento);
         $("#inputVendedor").val(response.data[0].Vendedor);
-        $("#inputCliente").val(response.data.CodigoCliente);
-        $("#inputCliente").val(response.data.CodigoCliente);
-        $("#inputCliente").val(response.data.CodigoCliente);
+        $("#inputCliente").val(response.data[0].CodigoCliente);
 
      
 
