@@ -5,6 +5,7 @@ const PedidosVendaController = require('./controller/PedidosVendaController');
 const PedidosVendaProdutosController = require('./controller/PedidosVendaProdutosController');
 const ProdutoController = require('./controller/ProdutoController');
 const PedidosapiController = require('./controller/PedidosapiController');
+const ProdutosApiController = require('./controller/ProdutosApiController')
 
 const routes = express.Router();
 
@@ -12,7 +13,9 @@ const routes = express.Router();
 
 routes.get('/pedidosvenda', PedidosVendaController.indexPedidosVenda);
 
-routes.get('/pedidosapi/:id', PedidosapiController.indexPedidosVendasapi);
+routes.get('/pedidosapi', PedidosapiController.indexPedidosVendasapi);
+
+routes.get('/produtosapi', ProdutosApiController.indexProdutosApi);
 
 routes.get('/pedidosvendaprodutos', PedidosVendaProdutosController.indexPedidosVendaProdutos);
 
