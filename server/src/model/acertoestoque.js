@@ -1,6 +1,74 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+
+const { Model, DataTypes } = require('sequelize');
+
+class acertoestoque extends Model {
+    static init(sequelize) {
+        super.init({
+            Data: DataTypes.DATEONLY,
+            Hora: DataTypes.TIME, 
+            CodigoProduto: DataTypes.INTEGER,
+            Qtde: DataTypes.DOUBLE,
+            Tipo: DataTypes.STRING,
+            Empresa: DataTypes.INTEGER,
+            Usuario: DataTypes.STRING,
+              
+            Terminal:        DataTypes.STRING,
+              
+            Cancelado: 
+               DataTypes.INTEGER(10).UNSIGNED,
+              
+            Valor: DataTypes.DOUBLE,
+             
+            Obs:  DataTypes.STRING(200),
+              
+            CodigoFornecedor: DataTypes.INTEGER(10).UNSIGNED,
+              
+            NomeFornecedor: DataTypes.STRING(100),
+              
+            BaixaComposicao: DataTypes.INTEGER(1).UNSIGNED,
+              
+            ValorAntes: DataTypes.DOUBLE,
+              
+            EstqAtual: DataTypes.DOUBLE,
+              
+            EstqNovo: DataTypes.DOUBLE,
+
+            Peso: DataTypes.DOUBLE,
+
+            Tipo_Acerto:  DataTypes.STRING(13),
+             
+            SeqProdEntrada: DataTypes.INTEGER(10).UNSIGNED,
+              
+            ValorCusto: DataTypes.DOUBLE,
+
+            SeqCentroCusto: DataTypes.INTEGER(10).UNSIGNED,
+              
+            CodigoDepartamento:  DataTypes.INTEGER(10).UNSIGNED,
+              
+            SeqProdVenda: DataTypes.INTEGER(10).UNSIGNED,
+              
+            SeqProdDevolucaoConferencia: DataTypes.INTEGER(10).UNSIGNED,
+              
+            QtdeEmb:DataTypes.DOUBLE,
+
+            codigosolicitante: DataTypes.INTEGER(10),
+              
+            NomeSolicitante:  DataTypes.STRING(45),
+             
+        }, {
+            sequelize,
+            tableName: 'acertoestoque',
+            timestamps: false
+        })
+    }
+}
+
+module.exports = acertoestoque;
+
+
+/* module.exports = function(sequelize, DataTypes) {
   return sequelize.define('acertoestoque', {
     ID: {
       type: DataTypes.INTEGER(10).UNSIGNED,
@@ -10,7 +78,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     Data: {
       type: DataTypes.DATEONLY,
-      allowNull: false
+      allowNull: false 
     },
     Hora: {
       type: DataTypes.TIME,
@@ -123,4 +191,4 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     tableName: 'acertoestoque'
   });
-};
+}; */
