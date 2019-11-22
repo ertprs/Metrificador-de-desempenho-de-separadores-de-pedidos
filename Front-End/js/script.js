@@ -40,11 +40,11 @@ axios.get(
 
             console.log(total)
 
+            }).catch(function (error){
+                console.error(error)
             })
-
-
-
-
+      }).catch(function (error){
+          console.error(error)
       })
 
     }
