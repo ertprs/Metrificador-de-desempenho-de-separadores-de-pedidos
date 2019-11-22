@@ -45,12 +45,11 @@ axios.get(
 
             console.log(total)
 
+            }).catch(function (error){
+                console.error(error)
             })
-
-
-
-
-        document.getElementById('inputDataHora').innerHTML = response.data[0].data
+      }).catch(function (error){
+          console.error(error)
 
       })
 
