@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="./editar.css">
+
+    <title>Editar</title>
+  
+
+      <ul class="nav nav-pills nav-fill justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="editar.html">Editar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Graficos</a>
+        </li>        
+      </ul>
+      
+</head>
+<body>
+
+  <div class="container mt-5">
+
+    <form>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputNPedido">Nº Pedido:</label>
+          <input type="text" class="form-control" id="inputNPedido" placeholder="Nº Pedido">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputDataHora">Data/Hora</label>
+          <fieldset disabled><input type="text" class="form-control" id="inputDataHora" placeholder="Data/Hora"></fieldset>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputCliente">Cliente:</label>
+          <fieldset disabled><input type="text" class="form-control" id="inputCliente" placeholder="Cliente"></fieldset>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputFantasia">Fantasia:</label>
+          <fieldset disabled><input type="text" class="form-control" id="inputFantasia" placeholder="Fantasia"></fieldset>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputFP">Forma de Parcelamento:</label>
+          <fieldset disabled><input type="text" class="form-control" id="inputFP" placeholder="Dias"></fieldset>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputFPg">Forma de Pagamento</label>
+          <fieldset disabled><input type="text" class="form-control" id="inputFPg" placeholder="Tipo"></fieldset>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputFantasia">Vendedor:</label>
+          <fieldset disabled><input type="text" class="form-control" id="inputFantasia" placeholder="Fantasia"></fieldset>
+        </div>
+      </div>
+
+      <div id="tabela">
+        <table class="table my-3">
+          <thead>
+            <tr>
+              <th scope="col">Rua</th>
+              <th scope="col">Qtde</th>
+              <th scope="col">Confere</th>
+              <th scope="col">UM</th>
+              <th scope="col">Descrição</th>
+              <th scope="col">Fabricante</th>
+              <th scope="col">Referência</th>
+              <th scope="col">Código</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td><i class="far fa-square-full fa-2x"></i></td>
+              <td>@mdo</td>
+              <td>@mdo</td>
+              <td>@mdo</td>
+              <td>@mdo</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td><i class="far fa-square-full fa-2x"></i></td>
+              <td>@fat</td>
+              <td>@fat</td>
+              <td>@fat</td>
+              <td>@fat</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td><i class="far fa-square-full fa-2x"></i></td>
+              <td>@twitter</td>
+              <td>@twitter</td>
+              <td>@twitter</td>
+              <td>@twitter</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <div class="form-row mt-5">
+        <div class="form-group col-md-8">
+          <label for="inputFP">Obs Aud:</label>
+        </div>
+        <div class="form-group col-md-2">
+          <label for="inputFPg">Itens:</label>
+          <fieldset disabled><input type="text" class="form-control" id="inputFPg" placeholder="Itens"></fieldset>
+        </div>
+        <div class="form-group col-md-2">
+          <label for="inputFantasia">Qtde Total:</label>
+          <fieldset disabled><input type="text" class="form-control" id="inputFantasia" placeholder="Qtde"></fieldset>
+        </div>
+      </div>
+
+      <hr id="linha"> 
+
+      <div class="form-group">
+        <label for="inputAddress2">Separador</label>
+        <select class="custom-select custom-select">
+            <option selected>Nome do Separador</option>
+            <option value="1">Um</option>
+            <option value="2">Dois</option>
+            <option value="3">Três</option>
+          </select>
+      </div>
+
+      <div class="form-group">
+          <label for="inputErro">Erros do Separador:</label>
+          <input type="text" class="form-control" id="inputErro" placeholder="Qtde erros">
+        </div>
+
+      <button type="submit" class="btn btn-primary my-2" onclick="salvar()">Salvar</button>
+
+    </form>
+
+  </div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</html>
