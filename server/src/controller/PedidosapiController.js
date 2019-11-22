@@ -7,9 +7,12 @@ module.exports = {
     //LISTAGEM DE PESSOAS
     async indexPedidosVendasapi(req, res) {
         console.log(req.params.id)
+
         const pedidos = await Pedidos.findAll({
             
         });
+
+
         
         return res.json(pedidos)
     },
