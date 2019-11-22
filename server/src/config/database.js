@@ -7,7 +7,7 @@ module.exports = {
     host: 'localhost',
     port: '3308',
     username: 'root',
-    password: 'alberto1995',
+    password: '123',
     database: 'famart',
     define: {
         //timestamps: true,   //created_at, updated_at
