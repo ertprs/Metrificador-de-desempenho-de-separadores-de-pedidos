@@ -15,7 +15,7 @@ routes.get('/pedidosvenda', PedidosVendaController.indexPedidosVenda);
 routes.get('/pedidosvendaprodutos', PedidosVendaProdutosController.indexPedidosVendaProdutos);
 
 routes.get('/produtos', ProdutoController.indexProdutos)
-
+"teste"
 
 
 module.exports = routes;
