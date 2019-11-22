@@ -18,6 +18,8 @@ axios.get(
     .then(function(response){
         console.log(response.data);
 
+        document.getElementById('inputDataHora').innerHTML = response.data[0].data
+
       })
 
     }
