@@ -16,8 +16,10 @@ axios.get(
     {}
     )
     .then(function(response){
-        console.log(response.data[0].CodigoCliente);
-        
+
+        console.log(response.data)
+        $("#inputCliente").val(response.data[0].CodigoCliente);
+
         $("#inputFantasia").val(response.data[0].RazaoCliente);
         $("#inputFPg").val(response.data[0].ModalidadeCB);
         $("#inputFP").val(response.data[0].FormaParcelamento);
@@ -45,6 +47,7 @@ axios.get(
             })
       }).catch(function (error){
           console.error(error)
+
       })
 
     }
