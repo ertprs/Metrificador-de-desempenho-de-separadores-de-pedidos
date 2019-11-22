@@ -1,0 +1,5 @@
+sequelize-auto
+
+sequelize-auto -o "./src/model" -d "famart" -h "localhost" -u "root" -p 3308 -x "alberto1995" -e "mariadb"
+
+
