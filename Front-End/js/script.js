@@ -10,7 +10,10 @@ $("#inputNPedido").keydown(function(e){
 
 
 async function busca(param){
-axios.get('localhost:3001/pedidosapi/'+ param)
+axios.get('localhost:3001/pedidosapi/'+ param,{
+    mode: 'no-cors'
+}
+)
 .then( function (res){
     console.log(res.data);
 })
