@@ -52,18 +52,7 @@ class pedidosapi extends Model {
             type: DataTypes.STRING(150),
             allowNull: true
           },
-          Conferente: {
-            type: DataTypes.STRING(150),
-            allowNull: true
-          },
-          Errosconferente: {
-            type: DataTypes.STRING(150),
-            allowNull: true
-          },
-          Responsavelinsercao: {
-            type: DataTypes.STRING(150),
-            allowNull: true
-          }
+       
              
         }, {
             sequelize,

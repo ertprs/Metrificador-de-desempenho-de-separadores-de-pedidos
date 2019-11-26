@@ -12,9 +12,7 @@ $("#inputNPedido").keydown(function(e){
 async function busca(param){
 
 axios.get(
-    `http://localhost:3001/pedidosapi/${param}`,
-    {}
-    )
+    `http://localhost:3001/pedidosapi/${param}`)
     .then(function(response){
 
         console.log(response.data)

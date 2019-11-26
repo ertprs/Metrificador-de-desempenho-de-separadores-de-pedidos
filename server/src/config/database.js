@@ -5,9 +5,9 @@ module.exports = {
         timezone: 'Etc/GMT+3',
       },
     host: 'localhost',
-    port: '3308',
+    port: '3306',
     username: 'root',
-    password: 'alberto1995',
+    password: '123',
     database: 'famart',
     define: {
         //timestamps: true,   //created_at, updated_at
