@@ -34,7 +34,7 @@ async function busca(param){
             //response.data[0].Hora
             $("#separador").val(response.data[0].Separador);
             $("#errosseparador").val(response.data[0].ErrosSeparador);
-            $("#conferente").val(response.data[0].Conferente);
+            $("#conferentes").val(response.data[0].Conferentes);
             $("#inputitens").val(response.data.length);
             $("#inputQTDtotal").val(total);
 
@@ -52,7 +52,7 @@ async function busca(param){
 
                
                
-                ErrosConferentes: $("#errosconferente").val()
+                ErrosConferentes: $("#errosconferentes").val()
 
             }).then(function (response){
                 console.log(response);
