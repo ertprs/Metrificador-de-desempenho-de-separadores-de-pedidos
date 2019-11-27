@@ -29,4 +29,6 @@ routes.get('/produtos', ProdutoController.indexProdutos);
 
 routes.post('/create/dadosMetrica', DadosAPImetricaController.storeDados);
 
+routes.put('/update/dadosMetrica', DadosAPImetricaController.alterDados);
+
 module.exports = routes;

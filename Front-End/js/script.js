@@ -67,7 +67,7 @@ axios.get(
             "Vendedor": $("#inputVendedor").val(),
            "Data": $("#inputData").val(),
             "Hora": $("#inputHora").val(),
-            "Itens": $("#inputitens").val(response.data.length),
+            "Itens": $("#inputitens").val(),
             "QtdTotal": $("#inputQTDtotal").val(),
             "Separador":  $("#separador").val(),
             "ErrosSeparador": $("#errosseparador").val(),
