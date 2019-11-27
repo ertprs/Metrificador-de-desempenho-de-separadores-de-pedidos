@@ -15,7 +15,7 @@ async function busca(param){
         .then(function(response){
 
             let total = 0 ;
-            response.data.forEach(element => {
+             response.data.forEach(element => {
                 total += element.Quantidade;
              });
 
@@ -29,12 +29,12 @@ async function busca(param){
             $("#inputFP").val(response.data[0].FormaParcelamento);
             $("#inputVendedor").val(response.data[0].Vendedor);
             $("#inputCliente").val(response.data[0].CodigoCliente);
-            $("#inputData").val(response.data[0].Data)
-            $("#inputHora").val(response.data[0].Hora)
+            $("#inputData").val(response.data[0].Data);
+            $("#inputHora").val(response.data[0].Hora);
             //response.data[0].Hora
-            $("#separador").val(response.data[0].Separador)
-            $("#errosseparador").val(response.data[0].ErrosSeparador)
-            $("#conferente").val(response.data[0].Conferente)
+            $("#separador").val(response.data[0].Separador);
+            $("#errosseparador").val(response.data[0].ErrosSeparador);
+            $("#conferente").val(response.data[0].Conferente);
             $("#inputitens").val(response.data.length);
             $("#inputQTDtotal").val(total);
 
