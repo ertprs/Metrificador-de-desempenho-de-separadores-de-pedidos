@@ -14,7 +14,7 @@ async function busca(param){
         `http://localhost:3001/dadosMetrica/${param}`)
         .then(function(response){
 
-            let total = 0 ;
+            let total = undefined ;
              response.data.forEach(element => {
                 total += element.QtdTotal;
              });
