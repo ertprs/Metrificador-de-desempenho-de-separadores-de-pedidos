@@ -13,6 +13,8 @@ async function busca(param){
     axios.get(
         `http://localhost:3001/dadosMetrica/${param}`)
         .then(function(response){
+
+            let total = 0 ;
             response.data.forEach(element => {
                 total += element.Quantidade;
              });
@@ -34,7 +36,7 @@ async function busca(param){
             $("#errosseparador").val(response.data[0].ErrosSeparador)
             $("#conferente").val(response.data[0].Conferente)
             $("#inputitens").val(response.data.length);
-            $("#inputQTDtotal").val(response.data.total);
+            $("#inputQTDtotal").val(total);
 
            
           }).catch(function (error){
