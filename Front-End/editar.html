@@ -32,9 +32,13 @@
           <label for="inputNPedido">Nº Pedido:</label>
           <input type="text" class="form-control" id="inputNPedido" placeholder="Nº Pedido">
         </div>
-        <div class="form-group col-md-6">
-          <label for="inputDataHora">Data/Hora</label>
-          <fieldset disabled><input type="text" class="form-control" id="inputDataHora" placeholder="Data/Hora"></fieldset>
+        <div class="form-group col-md-3">
+          <label for="inputData">Data</label>
+          <fieldset disabled><input type="text" class="form-control" id="inputData" placeholder="Data"></fieldset>
+        </div>
+        <div class="form-group col-md-3">
+          <label for="inputHora">Hora</label>
+          <fieldset disabled><input type="text" class="form-control" id="inputHora" placeholder="Hora"></fieldset>
         </div>
       </div>
 
@@ -59,48 +63,53 @@
           <fieldset disabled><input type="text" class="form-control" id="inputFPg" placeholder="Tipo"></fieldset>
         </div>
         <div class="form-group col-md-4">
-          <label for="inputFantasia">Vendedor:</label>
-          <fieldset disabled><input type="text" class="form-control" id="inputFantasia" placeholder="Fantasia"></fieldset>
+          <label for="inputVendedor">Vendedor:</label>
+          <fieldset disabled><input type="text" class="form-control" id="inputVendedor" placeholder="Fantasia"></fieldset>
         </div>
       </div>
 
-      
+     
 
 
-      <div class="form-row">
+      <div class="form-row ">
         <div class="form-group col-md-8">
           <label for="inputFP">Obs Aud:</label>
         </div>
         <div class="form-group col-md-2">
-          <label for="inputFPg">Itens:</label>
-          <fieldset disabled><input type="text" class="form-control" id="inputFPg" placeholder="Itens"></fieldset>
+          <label for="inputitens">Itens:</label>
+          <fieldset disabled><input type="text" class="form-control" id="inputitens" placeholder="Itens"></fieldset>
         </div>
         <div class="form-group col-md-2">
-          <label for="inputFantasia">Qtde Total:</label>
-          <fieldset disabled><input type="text" class="form-control" id="inputFantasia" placeholder="Qtde"></fieldset>
+          <label for="inputQTDtotal">Qtde Total:</label>
+          <fieldset disabled><input type="text" class="form-control" id="inputQTDtotal" placeholder="Qtde"></fieldset>
         </div>
       </div>
 
       <hr id="linha"> 
 
       <div class="form-group">
-        <label for="inputSeparador">Separador</label>
+        <label for="inputAddress2">Separador</label>
         <select class="custom-select custom-select">
             <option selected>Nome do Separador</option>
-            <option value="1">S.Um</option>
-            <option value="2">S.Dois</option>
-            <option value="3">S.Três</option>
+            <option value="1">Um</option>
+            <option value="2">Dois</option>
+            <option value="3">Três</option>
           </select>
       </div>
 
       <div class="form-group">
+          <label for="inputErro">Erros do Separador:</label>
+          <input type="text" class="form-control" id="inputErro" placeholder="Qtde erros">
+        </div>
+
+      <div class="form-group">
           <label for="inputErroS">Erros do Separador:</label>
-          <input type="text" class="form-control" id="inputErroS" placeholder="Qtde erros separador">
+          <input type="text" class="form-control" id="errosseparador" placeholder="Qtde erros separador">
       </div>
 
       <div class="form-group">
           <label for="inputConferente">Conferente</label>
-          <select class="custom-select custom-select">
+          <select class="custom-select custom-select" id="conferente">
               <option selected>Nome do Conferente</option>
               <option value="1">C.Um</option>
               <option value="2">C.Dois</option>
@@ -110,10 +119,10 @@
   
         <div class="form-group">
             <label for="inputErroC">Erros do Conferente:</label>
-            <input type="text" class="form-control" id="inputErroC" placeholder="Qtde erros conferente">
+            <input type="text" class="form-control" id="erroconferente" placeholder="Qtde erros conferente">
         </div>
 
-      <button type="submit" class="btn btn-primary my-2" onclick="salvar()">Salvar</button>
+      <button type="submit" class="btn btn-primary my-2" onclick="update()">Salvar</button>
 
     </form>
 
@@ -175,5 +184,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
+<script src="./js/editscript.js"></script>
 </html>
