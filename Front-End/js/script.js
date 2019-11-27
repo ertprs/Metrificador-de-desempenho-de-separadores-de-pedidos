@@ -76,6 +76,7 @@ axios.get(
         }).then(function (response){
             console.log(response);
             alert("PLIM foi")
+            location.reload();
         }).catch(function (error){
             console.error(error);
             alert("Errou")
