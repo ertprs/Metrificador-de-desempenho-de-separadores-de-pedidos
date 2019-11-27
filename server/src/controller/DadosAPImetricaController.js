@@ -1,7 +1,7 @@
 const DadosAPImetrica = require('../model/DadosAPImetrica')
 
 module.exports = {
-    async indexDados(req, res) {
+    async showDados(req, res) {
         let { NumeroPedido } = req.params;
         // TEM QUE CONVERTER PRA INTEGER, POIS VINDO DA ROTA O ID VEM COMO STRING, E NO BANCO ESTÁ COMO INTEGER
         NumeroPedido = Number(NumeroPedido)

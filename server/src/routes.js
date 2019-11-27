@@ -26,6 +26,7 @@ routes.get('/pedidosvendaprodutos', PedidosVendaProdutosController.indexPedidosV
 routes.get('/produtos', ProdutoController.indexProdutos);
 
 //ROTAS BANCO DE DADOS 2
+routes.get('/dadosMetrica/:NumeroPedido', DadosAPImetricaController.showDados);
 
 routes.post('/create/dadosMetrica', DadosAPImetricaController.storeDados);
 
