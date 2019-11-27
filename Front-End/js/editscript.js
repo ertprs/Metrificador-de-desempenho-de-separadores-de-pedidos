@@ -28,7 +28,7 @@ async function busca(param){
             $("#separador").val(response.data[0].Separador)
             $("#errosseparador").val(response.data[0].ErrosSeparador)
             $("#conferente").val(response.data[0].Conferente)
-            $("#errosconferente").val(response.data[0].ErrosConferentes)
+            
 
             axios.get(
                 `http://localhost:3001/produtosapi/${param}`,
@@ -60,9 +60,8 @@ async function busca(param){
             q = $("#inputNPedido").val();
             axios.patch(`http://localhost:3001/update/dadosMetrica/`+q,{
 
-                Separador:  $("#separador").val(),
-                ErrosSeparador: $("#errosseparador").val(),
-                Conferente: $("#conferente").val(),
+               
+               
                 ErrosConferentes: $("#errosconferente").val()
 
             }).then(function (response){
