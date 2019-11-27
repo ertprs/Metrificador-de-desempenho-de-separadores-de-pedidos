@@ -59,19 +59,19 @@ axios.get(
 
         axios.post(`http://localhost:3001/create/dadosMetrica`,{
 
-            NumeroPedido : $("#inputNPedido").val(),
-            CodigoCliente: $("#inputCliente").val(),
-            RazaoCliente: $("#inputFantasia").val(),
-            ModalidadeCB: $("#inputFPg").val(),
-            FormaParcelamento: $("#inputFP").val(),
-            Vendedor: $("#inputVendedor").val(),
-            Data: $("#inputData").val(),
-            Hora: $("#inputHora").val(),
-            Itens: $("#inputitens").val(response.data.length),
-            QtdTotal: $("#inputQTDtotal").val(),
-            Separador:  $("#separador").val(),
-            ErrosSeparador: $("#errosseparador").val(),
-            Conferente: 'conferido'
+            "NumeroPedido" : $("#inputNPedido").val(),
+            "CodigoCliente": $("#inputCliente").val(),
+            "RazaoCliente": $("#inputFantasia").val(),
+            "ModalidadeCB": $("#inputFPg").val(),
+            "FormaParcelamento": $("#inputFP").val(),
+            "Vendedor": $("#inputVendedor").val(),
+           "Data": $("#inputData").val(),
+            "Hora": $("#inputHora").val(),
+            "Itens": $("#inputitens").val(response.data.length),
+            "QtdTotal": $("#inputQTDtotal").val(),
+            "Separador":  $("#separador").val(),
+            "ErrosSeparador": $("#errosseparador").val(),
+            "Conferente": 'conferido'
 
         }).then(function (response){
             console.log(response);
