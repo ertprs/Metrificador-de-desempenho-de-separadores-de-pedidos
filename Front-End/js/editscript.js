@@ -16,7 +16,7 @@ async function busca(param){
 
             let total = 0 ;
              response.data.forEach(element => {
-                total += element.Quantidade;
+                total += element.QtdTotal;
              });
 
 
