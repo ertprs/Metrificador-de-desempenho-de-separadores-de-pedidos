@@ -70,7 +70,8 @@ axios.get(
             Itens: $("#inputitens").val(response.data.length),
             QtdTotal: $("#inputQTDtotal").val(),
             Separador:  $("#separador").val(),
-            ErrosSeparador: $("#errosseparador").val()
+            ErrosSeparador: $("#errosseparador").val(),
+            Conferente: 'conferido'
 
         }).then(function (response){
             console.log(response);
