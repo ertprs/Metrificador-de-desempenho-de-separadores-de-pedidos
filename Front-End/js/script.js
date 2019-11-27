@@ -55,7 +55,7 @@ axios.get(
 
 
     async function salvar(){
-
+console.log($("#separador").val())
 
         axios.post(`http://localhost:3001/create/dadosMetrica`,{
 
@@ -67,7 +67,7 @@ axios.get(
             "Vendedor": $("#inputVendedor").val(),
            "Data": $("#inputData").val(),
             "Hora": $("#inputHora").val(),
-            "Itens": $("#inputitens").val(),
+            "Itens": $("#inputitens option:selected").val(),
             "QtdTotal": $("#inputQTDtotal").val(),
             "Separador":  $("#separador").val(),
             "ErrosSeparador": $("#errosseparador").val(),
