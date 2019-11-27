@@ -1,3 +1,6 @@
+CREATE DATABASE famartapi;
+
+
 create table dadosAPImetrica(
 CodigoPedido integer (10) unsigned  primary key not null,
 Codigo_produt integer (3) unsigned not null,
@@ -8,4 +11,4 @@ Prateleira varchar (50),
 UNVenda varchar (3),
 Quantidade double
 
-)
+);

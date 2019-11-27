@@ -1,52 +1,82 @@
-/* jshint indent: 2 */
+
 
 const { Model, DataTypes } = require('sequelize');
 
-class produtosapi extends Model {
+class dadosAPImetrica extends Model {
     static init(sequelize) {
         super.init({ 
 
-          CodigoPedido: {
+          Numero_pedido: {
             type: DataTypes.INTEGER(10).UNSIGNED,
             allowNull: false,
-            primaryKey: true,
+            defaultValue: '0',
+            primaryKey: true
           },
-          Codigo_produto: {
+          CodigoCliente: {
             type: DataTypes.INTEGER(10).UNSIGNED,
-            allowNull: false,
-            defaultValue: '0'
-          },
-          Referencia: {
-            type: DataTypes.STRING(30),
             allowNull: true
           },
-          Descricao: {
-            type: DataTypes.STRING(120),
+          Telefone1: {
+            type: DataTypes.STRING(150),
             allowNull: true
           },
-          Fabricante: {
-            type: DataTypes.STRING(30),
+          RazaoCliente: {
+            type: DataTypes.STRING(100),
             allowNull: true
           },
-          Prateleira: {
+          FormaParcelamento: {
+            type: DataTypes.STRING(75),
+            allowNull: true
+          },
+          Data: {
+            type: DataTypes.DATEONLY,
+            allowNull: true
+          },
+          Hora: {
+            type: DataTypes.TIME,
+            allowNull: true
+          },
+          CodigoVendedor: {
+            type: DataTypes.INTEGER(10).UNSIGNED,
+            allowNull: true
+          },
+          Vendedor: {
+            type: DataTypes.STRING(100),
+            allowNull: true
+          },
+          ModalidadeCB: {
+            type: DataTypes.STRING(25),
+            allowNull: true
+          },
+          Cidade: {
+            type: DataTypes.STRING(150),
+            allowNull: true
+          },
+          Separador: {
             type: DataTypes.STRING(50),
             allowNull: true
           },
-          UNVenda: {
+          ErrosSeparador: {
             type: DataTypes.STRING(3),
             allowNull: true
           },
-          Quantidade: {
-            type: "DOUBLE",
+          Conferente: {
+            type: DataTypes.STRING(50),
             allowNull: true
           },
+          ErrosConferentes: {
+            type: DataTypes.STRING(3),
+            allowNull: true
+          },
+
+
              
         }, {
             sequelize,
-            tableName: 'produtosapi',
+            tableName: 'dadosAPImetrica',
             timestamps: false
         })
     }
 }
 
-module.exports = produtosapi;
+module.exports = dadosAPImetrica;
