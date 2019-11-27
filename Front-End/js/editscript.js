@@ -21,7 +21,7 @@ async function busca(param){
              console.log(total)
 
 
-            console.log(response.data)
+            console.log(response.data[0].Conferente)
             $("#inputCliente").val(response.data[0].CodigoCliente);
     
             $("#inputFantasia").val(response.data[0].RazaoCliente);
@@ -34,7 +34,7 @@ async function busca(param){
             //response.data[0].Hora
             $("#separador").val(response.data[0].Separador);
             $("#errosseparador").val(response.data[0].ErrosSeparador);
-            $("#conferentes").val(response.data[0].Conferentes);
+            $("#conferente").val(response.data[0].Conferente);
             $("#inputitens").val(response.data.length);
             $("#inputQTDtotal").val(total);
 
@@ -47,12 +47,11 @@ async function busca(param){
         }
 
         async function update(){
-            q = $("#inputNPedido").val();
-            axios.patch(`http://localhost:3001/update/dadosMetrica/`+q,{
-
+           console.log($("#erroconferentes").val())
+            axios.put(`http://localhost:3001/update/dadosMetrica/`,{
                
-               
-                ErrosConferentes: $("#errosconferentes").val()
+                NumeroPedido: $("#inputNPedido").val(),
+                ErrosConferentes: $("#erroconferentes").val()
 
             }).then(function (response){
                 console.log(response);
