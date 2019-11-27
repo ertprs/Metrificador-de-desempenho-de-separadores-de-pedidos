@@ -55,7 +55,7 @@ axios.get(
 
 
     async function salvar(){
-console.log($("#separador").val())
+
 
         axios.post(`http://localhost:3001/create/dadosMetrica`,{
 
