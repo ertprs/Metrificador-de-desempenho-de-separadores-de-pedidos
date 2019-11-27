@@ -11,7 +11,7 @@ $("#inputNPedido").keydown(function(e){
 async function busca(param){
 
     axios.get(
-        `http://localhost:3001/pedidosapi/${param}`)
+        `http://localhost:3001/dadosMetrica/${param}`)
         .then(function(response){
     
             console.log(response.data)
@@ -28,27 +28,10 @@ async function busca(param){
             $("#separador").val(response.data[0].Separador)
             $("#errosseparador").val(response.data[0].ErrosSeparador)
             $("#conferente").val(response.data[0].Conferente)
-            
+            $("#inputitens").val(response.data.length);
+            $("#inputQTDtotal").val(total);
 
-            axios.get(
-                `http://localhost:3001/produtosapi/${param}`,
-                {}
-                )
-                .then(function(response){
-                        console.log(response)
-                 let total = 0 ;
-                 response.data.forEach(element => {
-                    total += element.Quantidade;
-                 });
-                    
-                 $("#inputitens").val(response.data.length);
-                 $("#inputQTDtotal").val(total);
-    
-                console.log(total)
-    
-                }).catch(function (error){
-                    console.error(error)
-                })
+           
           }).catch(function (error){
               console.error(error)
     
