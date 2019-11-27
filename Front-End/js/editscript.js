@@ -57,19 +57,9 @@ async function busca(param){
         }
 
         async function update(){
-            
-            axios.patch(`http://localhost:3001/update/dadosMetrica`,{
+            q = $("#inputNPedido").val();
+            axios.patch(`http://localhost:3001/update/dadosMetrica/`+q,{
 
-                NumeroPedido : $("#inputNPedido").val(),
-                CodigoCliente: $("#inputCliente").val(),
-                RazaoCliente: $("#inputFantasia").val(),
-                ModalidadeCB: $("#inputFPg").val(),
-                FormaParcelamento: $("#inputFP").val(),
-                Vendedor: $("#inputVendedor").val(),
-                Data: $("#inputData").val(),
-                Hora: $("#inputHora").val(),
-                Itens: $("#inputitens").val(response.data.length),
-                QtdTotal: $("#inputQTDtotal").val(),
                 Separador:  $("#separador").val(),
                 ErrosSeparador: $("#errosseparador").val(),
                 Conferente: $("#conferente").val(),
