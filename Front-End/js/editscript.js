@@ -29,7 +29,7 @@ async function busca(param){
             $("#errosseparador").val(response.data[0].ErrosSeparador)
             $("#conferente").val(response.data[0].Conferente)
             $("#inputitens").val(response.data.length);
-            $("#inputQTDtotal").val(total);
+            $("#inputQTDtotal").val(response.data.total);
 
            
           }).catch(function (error){
