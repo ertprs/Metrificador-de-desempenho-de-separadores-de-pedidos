@@ -58,7 +58,7 @@ async function busca(param){
 
         async function update(){
             
-            axios.patch(`http://localhost:3001/create/dadosMetrica`,{
+            axios.patch(`http://localhost:3001/update/dadosMetrica`,{
 
                 NumeroPedido : $("#inputNPedido").val(),
                 CodigoCliente: $("#inputCliente").val(),
