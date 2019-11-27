@@ -7,6 +7,8 @@ const ProdutoController = require('./controller/ProdutoController');
 const PedidosapiController = require('./controller/PedidosapiController');
 const ProdutosApiController = require('./controller/ProdutosApiController')
 
+const DadosAPImetricaController = require('./controller/DadosAPImetricaController')
+
 const routes = express.Router();
 
 
@@ -21,8 +23,10 @@ routes.get('/produtosapi/:id', ProdutosApiController.indexProdutosApi);
 
 routes.get('/pedidosvendaprodutos', PedidosVendaProdutosController.indexPedidosVendaProdutos);
 
-routes.get('/produtos', ProdutoController.indexProdutos)
+routes.get('/produtos', ProdutoController.indexProdutos);
 
+//ROTAS BANCO DE DADOS 2
 
+routes.post('/create/dadosMetrica', DadosAPImetricaController.storeDados);
 
 module.exports = routes;

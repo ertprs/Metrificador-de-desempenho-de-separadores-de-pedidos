@@ -7,7 +7,7 @@ module.exports = {
     host: 'localhost',
     port: '3308',
     username: 'root',
-    password: '123',
+    password: 'alberto1995',
     database: 'famartapi',
     define: {
      
