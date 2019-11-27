@@ -13,7 +13,12 @@ async function busca(param){
     axios.get(
         `http://localhost:3001/dadosMetrica/${param}`)
         .then(function(response){
-    
+            response.data.forEach(element => {
+                total += element.Quantidade;
+             });
+
+
+
             console.log(response.data)
             $("#inputCliente").val(response.data[0].CodigoCliente);
     

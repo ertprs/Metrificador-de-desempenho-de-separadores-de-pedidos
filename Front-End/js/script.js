@@ -39,7 +39,7 @@ axios.get(
              });
                 
              $("#inputitens").val(response.data.length);
-             $("#inputQTDtotal").val(esponse.data.total);
+             $("#inputQTDtotal").val(total);
 
             console.log(total)
 
