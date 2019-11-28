@@ -1,3 +1,5 @@
+// BD2
+
 const DadosAPImetrica = require('../model/DadosAPImetrica')
 
 module.exports = {
@@ -9,6 +11,21 @@ module.exports = {
         const dados =  await DadosAPImetrica.findAll({
             where: {
                 NumeroPedido: NumeroPedido
+            }
+        })
+
+        return res.json(dados); 
+    },
+
+    async showDadosSeparador(req, res) {
+        console.log('foi')
+        let { nome } = req.params.nome;
+        
+        //nome = toString(nome)
+
+        const dados =  await DadosAPImetrica.findAll({
+            where: {
+                Separador: nome
             }
         })
 
