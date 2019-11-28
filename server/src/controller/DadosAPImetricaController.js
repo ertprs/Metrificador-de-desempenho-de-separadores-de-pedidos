@@ -1,5 +1,6 @@
 // BD2
-
+const sequelize = require('sequelize');
+const Op = sequelize.Op
 const DadosAPImetrica = require('../model/DadosAPImetrica')
 
 module.exports = {
@@ -20,12 +21,27 @@ module.exports = {
     async showDadosSeparador(req, res) {
         
         let { nome } = req.params;
-
       
 
         const dados =  await DadosAPImetrica.findAll({
             where: {
                 Separador: nome
+            }
+        })
+
+        return res.json(dados); 
+    },
+
+    async showDadosData(req, res) {
+        console.log("entrou")
+        let { dataInicio, dataFinal } = req.body;
+        console.log(dataInicio, dataFinal)
+
+        const dados =  await DadosAPImetrica.findAll({
+            where: {
+                Data: {
+                    [Op.between]: [dataInicio, dataFinal]
+                }
             }
         })
 
