@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,161 +8,162 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
     <link rel="stylesheet" href="./css/editar.css">
-  
-    <title>Editar</title>
-  
 
-      <ul class="nav nav-pills nav-fill justify-content-center">
+    <title>Editar</title>
+
+
+    <ul class="nav nav-pills nav-fill justify-content-center">
         <li class="nav-item">
-          <a class="nav-link " href="index.html">Home</a>
+            <a class="nav-link " href="index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Editar</a>
+            <a class="nav-link active" href="#">Editar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Graficos</a>
-        </li>        
-      </ul>      
+            <a class="nav-link" href="graficos.html">Graficos</a>
+        </li>
+    </ul>
 </head>
+
 <body>
 
-  <div class="container mt-5">
-    <form onsubmit="event.preventDefault()">
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputNPedido">Nº Pedido:</label>
-          <input type="text" class="form-control" id="inputNPedido" placeholder="Nº Pedido">
-        </div>
-        <div class="form-group col-md-3">
-          <label for="inputData">Data</label>
-          <fieldset disabled><input type="text" class="form-control" id="inputData" placeholder="Data"></fieldset>
-        </div>
-        <div class="form-group col-md-3">
-          <label for="inputHora">Hora</label>
-          <fieldset disabled><input type="text" class="form-control" id="inputHora" placeholder="Hora"></fieldset>
-        </div>
-      </div>
+    <div class="container mt-5">
+        <form onsubmit="event.preventDefault()">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputNPedido">Nº Pedido:</label>
+                    <input type="text" class="form-control" id="inputNPedido" placeholder="Nº Pedido">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="inputData">Data</label>
+                    <fieldset disabled><input type="text" class="form-control" id="inputData" placeholder="Data"></fieldset>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="inputHora">Hora</label>
+                    <fieldset disabled><input type="text" class="form-control" id="inputHora" placeholder="Hora"></fieldset>
+                </div>
+            </div>
 
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputCliente">Cliente:</label>
-          <fieldset disabled><input type="text" class="form-control" id="inputCliente" placeholder="Cliente"></fieldset>
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputFantasia">Fantasia:</label>
-          <fieldset disabled><input type="text" class="form-control" id="inputFantasia" placeholder="Fantasia"></fieldset>
-        </div>
-      </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputCliente">Cliente:</label>
+                    <fieldset disabled><input type="text" class="form-control" id="inputCliente" placeholder="Cliente"></fieldset>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputFantasia">Fantasia:</label>
+                    <fieldset disabled><input type="text" class="form-control" id="inputFantasia" placeholder="Fantasia"></fieldset>
+                </div>
+            </div>
 
-      <div class="form-row">
-        <div class="form-group col-md-4">
-          <label for="inputFP">Forma de Parcelamento:</label>
-          <fieldset disabled><input type="text" class="form-control" id="inputFP" placeholder="Dias"></fieldset>
-        </div>
-        <div class="form-group col-md-4">
-          <label for="inputFPg">Forma de Pagamento</label>
-          <fieldset disabled><input type="text" class="form-control" id="inputFPg" placeholder="Tipo"></fieldset>
-        </div>
-        <div class="form-group col-md-4">
-          <label for="inputVendedor">Vendedor:</label>
-          <fieldset disabled><input type="text" class="form-control" id="inputVendedor" placeholder="Fantasia"></fieldset>
-        </div>
-      </div>
-
-     
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="inputFP">Forma de Parcelamento:</label>
+                    <fieldset disabled><input type="text" class="form-control" id="inputFP" placeholder="Dias"></fieldset>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputFPg">Forma de Pagamento</label>
+                    <fieldset disabled><input type="text" class="form-control" id="inputFPg" placeholder="Tipo"></fieldset>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputVendedor">Vendedor:</label>
+                    <fieldset disabled><input type="text" class="form-control" id="inputVendedor" placeholder="Fantasia"></fieldset>
+                </div>
+            </div>
 
 
-      <div class="form-row ">
-        <div class="form-group col-md-8">
-          <label for="inputFP">Obs Aud:</label>
+
+
+            <div class="form-row ">
+                <div class="form-group col-md-8">
+                    <label for="inputFP">Obs Aud:</label>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputitens">Itens:</label>
+                    <fieldset disabled><input type="text" class="form-control" id="inputitens" placeholder="Itens"></fieldset>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputQTDtotal">Qtde Total:</label>
+                    <fieldset disabled><input type="text" class="form-control" id="inputQTDtotal" placeholder="Qtde"></fieldset>
+                </div>
+            </div>
+
+            <hr id="linha">
+
+            <div class="form-group">
+                <label for="separador">Separador</label>
+                <fieldset disabled> <input type="text" class="form-control" id="separador" placeholder="Separador"></fieldset>
+            </div>
+
+            <div class="form-group">
+                <label for="inputErroS">Erros do Separador:</label>
+                <fieldset disabled> <input type="text" class="form-control" id="errosseparador" placeholder="Qtde erros separador"></fieldset>
+            </div>
+
+            <div class="form-group">
+                <label for="inputConferente">Conferente</label>
+                <fieldset disabled> <input type="text" class="form-control" id="conferente" placeholder="Qtde erros separador"></fieldset>
+            </div>
+
+            <div class="form-group">
+                <label for="erroconferentes">Erros do Conferente:</label>
+                <input type="text" class="form-control" id="erroconferentes" placeholder="Qtde erros conferente">
+            </div>
+
+            <button type="submit" class="btn btn-primary my-2" onclick="update()">Salvar</button>
+
+        </form>
+
+        <div id="tabela">
+            <table class="table my-3">
+                <thead>
+                    <tr>
+                        <th scope="col">Rua</th>
+                        <th scope="col">Qtde</th>
+                        <th scope="col">Confere</th>
+                        <th scope="col">UM</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Fabricante</th>
+                        <th scope="col">Referência</th>
+                        <th scope="col">Código</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td><i class="far fa-square-full fa-2x"></i></td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td><i class="far fa-square-full fa-2x"></i></td>
+                        <td>@fat</td>
+                        <td>@fat</td>
+                        <td>@fat</td>
+                        <td>@fat</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td><i class="far fa-square-full fa-2x"></i></td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="form-group col-md-2">
-          <label for="inputitens">Itens:</label>
-          <fieldset disabled><input type="text" class="form-control" id="inputitens" placeholder="Itens"></fieldset>
-        </div>
-        <div class="form-group col-md-2">
-          <label for="inputQTDtotal">Qtde Total:</label>
-          <fieldset disabled><input type="text" class="form-control" id="inputQTDtotal" placeholder="Qtde"></fieldset>
-        </div>
-      </div>
 
-      <hr id="linha"> 
 
-      <div class="form-group">
-        <label for="separador">Separador</label>
-        <fieldset disabled>  <input type="text" class="form-control" id="separador" placeholder="Separador"></fieldset>
-         </div>
-      
-         <div class="form-group">
-          <label for="inputErroS">Erros do Separador:</label>
-          <fieldset disabled>  <input type="text" class="form-control" id="errosseparador" placeholder="Qtde erros separador"></fieldset>
-      </div>
-
-      <div class="form-group">
-          <label for="inputConferente">Conferente</label>
-          <fieldset disabled> <input type="text" class="form-control" id="conferente" placeholder="Qtde erros separador"></fieldset>
-         </div>
-  
-        <div class="form-group">
-            <label for="erroconferentes">Erros do Conferente:</label>
-            <input type="text" class="form-control" id="erroconferentes" placeholder="Qtde erros conferente">
-        </div>
-
-      <button type="submit" class="btn btn-primary my-2" onclick="update()">Salvar</button>
-
-    </form>
-
-    <div id="tabela">
-      <table class="table my-3">
-        <thead>
-          <tr>
-            <th scope="col">Rua</th>
-            <th scope="col">Qtde</th>
-            <th scope="col">Confere</th>
-            <th scope="col">UM</th>
-            <th scope="col">Descrição</th>
-            <th scope="col">Fabricante</th>
-            <th scope="col">Referência</th>
-            <th scope="col">Código</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td><i class="far fa-square-full fa-2x"></i></td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td><i class="far fa-square-full fa-2x"></i></td>
-            <td>@fat</td>
-            <td>@fat</td>
-            <td>@fat</td>
-            <td>@fat</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td><i class="far fa-square-full fa-2x"></i></td>
-            <td>@twitter</td>
-            <td>@twitter</td>
-            <td>@twitter</td>
-            <td>@twitter</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
     </div>
-
-
-  </div>
 
 </body>
 
@@ -170,4 +172,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="./js/editscript.js"></script>
+
 </html>
