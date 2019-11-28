@@ -1,14 +1,20 @@
 CREATE DATABASE famartapi;
 
+use famartapi;
 
 create table dadosAPImetrica(
-CodigoPedido integer (10) unsigned  primary key not null,
-Codigo_produt integer (3) unsigned not null,
-Referencia varchar (30),
-Descricao varchar (120),
-Fabricante varchar (30),
-Prateleira varchar (50),
-UNVenda varchar (3),
-Quantidade double
-
+`NumeroPedido` integer(10) unsigned primary key not null,
+`CodigoCliente` integer(10) unsigned not null,
+`RazaoCliente` varchar(100),
+`FormaParcelamento` varchar(75),
+`Data` date,
+`Hora` time,
+`Vendedor` varchar(100),
+`ModalidadeCB` varchar(25),
+`Separador` varchar(50),
+`ErrosSeparador` varchar(3),
+`Conferente` varchar(50),
+`ErrosConferentes` varchar(3),
+`Itens` varchar(5),
+`QtdTotal` varchar(10)
 );

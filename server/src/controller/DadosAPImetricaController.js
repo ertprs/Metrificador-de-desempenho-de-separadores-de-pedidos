@@ -18,10 +18,10 @@ module.exports = {
     },
 
     async showDadosSeparador(req, res) {
-        console.log('foi')
-        let { nome } = req.params.nome;
         
-        //nome = toString(nome)
+        let { nome } = req.params;
+
+      
 
         const dados =  await DadosAPImetrica.findAll({
             where: {
