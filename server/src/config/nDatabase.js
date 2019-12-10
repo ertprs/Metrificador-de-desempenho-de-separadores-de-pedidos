@@ -5,9 +5,9 @@ module.exports = {
         timezone: 'Etc/GMT+3',
       },
     host: 'localhost',
-    port: '3306',
+    port: '3308',
     username: 'root',
-    password: '123',
+    password: 'alberto1995',
     database: 'famartapi',
     define: {
      

@@ -1,0 +1,4 @@
+server/node_modules/
+server/src/config/
+server/src/config/database.js
+server/src/config/nDatabase.js
