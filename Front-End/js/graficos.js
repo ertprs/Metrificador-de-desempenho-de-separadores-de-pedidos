@@ -14,14 +14,15 @@ function limpardiv() {
 
 async function graficoColunas() {
 
-       /*  console.log("Data incio   "+$("#datainicio").val()) */
+         console.log("Data incio   "+$("#datainicio").val()) 
+         console.log("Data Final   "+$("#datafinal").val()) 
 
 
-   await axios.get('http://localhost:3001/dados/data', {
-        params: {
+   await axios.post('http://localhost:3001/dados/data', {
+       
           dataInicio: $("#datainicio").val(),
           dataFinal: $("#datafinal").val()
-        }
+        
       })
       .then(function (response) {
         console.log(response);
