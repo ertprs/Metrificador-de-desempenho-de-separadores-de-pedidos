@@ -6,9 +6,9 @@ module.exports = {
       },
     host: 'localhost',
     // porta alberto 3308 minha 3306
-    port: '3306',
+    port: '3308',
     username: 'root',
-    password: '123',
+    password: 'alberto1995',
     // meu 123 -- alberto alberto1995
     database: 'famart',
     define: {

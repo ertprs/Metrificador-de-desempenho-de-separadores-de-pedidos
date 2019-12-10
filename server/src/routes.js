@@ -32,6 +32,8 @@ routes.get('/dadosMetrica/separador/:nome', DadosAPImetricaController.showDadosS
 
 routes.post('/dados/data', DadosAPImetricaController.showDadosData);
 
+routes.get('/dados/Pedidos/Separados', DadosAPImetricaController.showDadosPedidosSeparados)
+
 routes.post('/create/dadosMetrica', DadosAPImetricaController.storeDados);
 
 routes.put('/update/dadosMetrica', DadosAPImetricaController.alterDados);

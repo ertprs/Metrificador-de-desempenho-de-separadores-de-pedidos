@@ -32,6 +32,38 @@ module.exports = {
         return res.json(dados); 
     },
 
+    async showDadosPedidosSeparados(req, res) {
+
+        let { nome, dataInicio, dataFinal } = req.body
+
+        // pegando os pedidos separados
+        const dados = await DadosAPImetrica.findAndCountAll({
+            where: {
+                SEPARADOR: nome,
+                Data: {
+                    [Op.between]: [dataInicio, dataFinal]
+                }
+            }
+        })
+
+        // pegando os erros realizados
+        const dados2 = await DadosAPImetrica.sum('ErrosSeparador', {
+            where: {
+                SEPARADOR: nome,
+                Data: {
+                    [Op.between]: [dataInicio, dataFinal]
+                }
+            }
+        })
+
+        let resultado = new Object();
+        resultado.pedidosSeparados = dados.count; // pedidos separados
+        resultado.errosRealizados = dados2; // erros realizados
+
+        return res.json(resultado); 
+
+    },
+
     async showDadosData(req, res) {
         console.log("entrou")
         let { dataInicio, dataFinal } = req.body;
