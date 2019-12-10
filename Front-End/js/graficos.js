@@ -12,9 +12,28 @@ function limpardiv() {
 }
 
 
-function graficoColunas() {
+async function graficoColunas() {
 
-    // Create the data table.
+       /*  console.log("Data incio   "+$("#datainicio").val()) */
+
+
+   await axios.get('http://localhost:3001/dados/data', {
+        params: {
+          dataInicio: $("#datainicio").val(),
+          dataFinal: $("#datafinal").val()
+        }
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .finally(function () {
+        // always executed
+      });  
+
+
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Topping');
     data.addColumn('number', 'Slices');
