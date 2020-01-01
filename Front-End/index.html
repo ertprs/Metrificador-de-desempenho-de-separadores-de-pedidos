@@ -1,188 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
-    <link rel="stylesheet" href="./css/index.css">
-
-    <title>Home</title>
-
-
-    <ul class="nav nav-pills nav-fill justify-content-center">
-        <li class="nav-item">
-            <a class="nav-link active" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="editar.html">Editar</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="graficos.html">Graficos</a>
-        </li>
-    </ul>
-
+	<title>Login V3</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
 </head>
-
 <body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bg-01.png');">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form">
+					<span class="login100-form-logo">
+						<img src="images/famart.jfif"></i>
+					</span>
 
-    <div class="container mt-5">
+					<span class="login100-form-title p-b-34 p-t-27">
+						
+					</span>
 
-        <form onsubmit="event.preventDefault()">
+					<div class="wrap-input100 validate-input" data-validate = "Usuario">
+						<input class="input100" type="text" name="username" placeholder="Usuario">
+						<span class="focus-input100" data-placeholder="&#xf207;"></span>
+					</div>
 
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputNPedido">Nº Pedido:</label>
-                    <input type="text" class="form-control" id="inputNPedido" placeholder="Nº Pedido">
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="inputData">Data</label>
-                    <fieldset disabled><input type="text" class="form-control" id="inputData" placeholder="Data"></fieldset>
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="inputHora">Hora</label>
-                    <fieldset disabled><input type="text" class="form-control" id="inputHora" placeholder="Hora"></fieldset>
-                </div>
-            </div>
+					<div class="wrap-input100 validate-input" data-validate="Senha">
+						<input class="input100" type="password" name="pass" placeholder="Senha">
+						<span class="focus-input100" data-placeholder="&#xf191;"></span>
+					</div>
 
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputCliente">Cliente:</label>
-                    <fieldset disabled><input type="text" class="form-control" id="inputCliente" placeholder="Cliente"></fieldset>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputFantasia">Fantasia:</label>
-                    <fieldset disabled><input type="text" class="form-control" id="inputFantasia" placeholder="Fantasia"></fieldset>
-                </div>
-            </div>
+					<div class="contact100-form-checkbox">
+						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+						<label class="label-checkbox100" for="ckb1">
+							Lembrar do login
+						</label>
+					</div>
 
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                    <label for="inputFP">Forma de Parcelamento:</label>
-                    <fieldset disabled><input type="text" class="form-control" id="inputFP" placeholder="Dias"></fieldset>
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="inputFPg">Forma de Pagamento</label>
-                    <fieldset disabled><input type="text" class="form-control" id="inputFPg" placeholder="Tipo"></fieldset>
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="inputVendedor">Vendedor:</label>
-                    <fieldset disabled><input type="text" class="form-control" id="inputVendedor" placeholder="Fantasia"></fieldset>
-                </div>
-            </div>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
 
+				</form>
+			</div>
+		</div>
+	</div>
+	
 
-
-
-            <div class="form-row ">
-                <div class="form-group col-md-8">
-                    <label for="inputFP">Obs Aud:</label>
-                </div>
-                <div class="form-group col-md-2">
-                    <label for="inputitens">Itens:</label>
-                    <fieldset disabled><input type="text" class="form-control" id="inputitens" placeholder="Itens"></fieldset>
-                </div>
-                <div class="form-group col-md-2">
-                    <label for="inputQTDtotal">Qtde Total:</label>
-                    <fieldset disabled><input type="text" class="form-control" id="inputQTDtotal" placeholder="Qtde"></fieldset>
-                </div>
-            </div>
-
-            <hr id="linha">
-
-            <div class="form-group">
-                <label for="inputAddress2">Separador</label>
-                <select class="custom-select custom-select" id="separador">
-            <option selected>Nome do Separador</option>
-            <option value="JONATAS">JONATAS</option>
-            <option value="MICHEL">MICHEL</option>
-            <option value="GUILHERME">GUILHERME</option>
-            <option value="RODRIGO">RODRIGO</option>
-            <option value="EDMILSON">EDMILSON</option>
-            <option value="DANIEL">DANIEL</option>
-            <option value="JHONNY">JHONNY</option>
-            <option value="JOSEPH">JOSEPH</option>
-            <option value="THIAGO">THIAGO</option>
-            <option value="PAULO">PAULO</option>
-            <option value="PAULO V.">PAULO V.</option>
-            <option value="CARLOS">CARLOS</option>
-            <option value="MATHEUS A">MATHEUS A</option>
-            <option value="FERNANDO">FERNANDO</option>
-            <option value="JOERBE">JOERBE</option>
-            <option value="PATRICK">PATRICK</option>
-            <option value="IVAN">IVAN</option>
-            <option value="MARILIA">MARILIA</option>
-          </select>
-            </div>
-
-            <div class="form-group">
-                <label for="inputErro">Erros do Separador:</label>
-                <input type="text" class="form-control" id="errosseparador" placeholder="Qtde erros">
-            </div>
-
-            <button type="submit" class="btn btn-primary my-2" onclick="salvar()">Salvar</button>
-
-        </form>
-
-        <div id="tabela">
-            <table class="table my-3">
-                <thead>
-                    <tr>
-                        <th scope="col">Rua</th>
-                        <th scope="col">Qtde</th>
-                        <th scope="col">Confere</th>
-                        <th scope="col">UM</th>
-                        <th scope="col">Descrição</th>
-                        <th scope="col">Fabricante</th>
-                        <th scope="col">Referência</th>
-                        <th scope="col">Código</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td><i class="far fa-square-full fa-2x"></i></td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td><i class="far fa-square-full fa-2x"></i></td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td><i class="far fa-square-full fa-2x"></i></td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-    </div>
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
 
 </body>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="./js/script.js"></script>
-
 </html>

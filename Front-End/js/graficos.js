@@ -25,7 +25,7 @@ async function graficoColunas() {
         
       })
       .then(function (response) {
-        console.log(response.data);
+        console.log(response.data[0]);
       })
       .catch(function (error) {
         console.log(error);

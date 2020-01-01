@@ -8,6 +8,23 @@ $("#inputNPedido").keydown(function(e){
         }
 })
 
+function limparcampos(){
+    $("#inputCliente").val(undefined);
+    $("#inputNPedido").val(undefined);
+    $("#inputFantasia").val(undefined);
+    $("#inputFPg").val(undefined);
+    $("#inputFP").val(undefined);
+    $("#inputVendedor").val(undefined);
+    $("#inputCliente").val(undefined);
+    $("#inputData").val(undefined)
+    $("#inputHora").val(undefined)
+    $("#inputitens").val(undefined)
+    $("#inputQTDtotal").val(undefined)
+    $("#separador").val(undefined)
+    $("#errosseparador").val(undefined)
+
+
+};
 
 async function busca(param){
 
@@ -48,6 +65,13 @@ axios.get(
             })
       }).catch(function (error){
           console.error(error)
+          $(".mensagem").append(`
+            <div class="alert alert-danger alert-dismissible fade show">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Houve um erro, verifique a sua conexao de rede e tente novamente.</strong>
+            </div>
+            
+            `);
 
       })
 
@@ -75,10 +99,26 @@ axios.get(
 
         }).then(function (response){
             console.log(response);
-            alert("PLIM foi")
-            location.reload();
+            $(".mensagem").empty();
+            $(".mensagem").append(`
+            <div class="alert alert-success alert-dismissible fade show">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Dados salvo com sucesso.</strong>
+            </div>
+            
+            `);
+            limparcampos();
+            
         }).catch(function (error){
             console.error(error);
+            $(".mensagem").empty();
+            $(".mensagem").append(`
+            <div class="alert alert-danger alert-dismissible fade show">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Houve um erro, verifique os dados e tente novamente.</strong>
+            </div>
+            
+            `);
             alert("Errou")
         })
     }

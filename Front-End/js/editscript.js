@@ -8,6 +8,26 @@ $("#inputNPedido").keydown(function(e){
     }
 })
 
+function limparcampos(){
+    $("#inputCliente").val(undefined);
+    $("#inputNPedido").val(undefined);
+    $("#inputFantasia").val(undefined);
+    $("#inputFPg").val(undefined);
+    $("#inputFP").val(undefined);
+    $("#inputVendedor").val(undefined);
+    $("#inputCliente").val(undefined);
+    $("#inputData").val(undefined);
+    $("#inputHora").val(undefined);
+    $("#inputitens").val(undefined);
+    $("#inputQTDtotal").val(undefined);
+    $("#separador").val(undefined);
+    $("#errosseparador").val(undefined);
+    $("#conferente").val(undefined);
+    $("#erroconferentes").val(undefined);
+
+
+};
+
 async function busca(param){
 
     axios.get(
@@ -55,9 +75,26 @@ async function busca(param){
 
             }).then(function (response){
                 console.log(response);
-                alert("PLIM Atualizouuu")
+
+                $(".mensagem").empty();
+                $(".mensagem").append(`
+                <div class="alert alert-success alert-dismissible fade show">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Dados salvo com sucesso.</strong>
+                </div>
+                
+                `);
+                limparcampos();
+
             }).catch(function (error){
                 console.error(error);
-                alert("Errou")
+                $(".mensagem").empty();
+                $(".mensagem").append(`
+                <div class="alert alert-danger alert-dismissible fade show">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Houve um erro, verifique os dados e tente novamente.</strong>
+                </div>
+                
+                `);
             })
         }

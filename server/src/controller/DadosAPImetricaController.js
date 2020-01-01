@@ -35,6 +35,7 @@ module.exports = {
     async showDadosPedidosSeparados(req, res) {
 
         let { nome, dataInicio, dataFinal } = req.body
+         console.log(dataInicio, dataFinal)
 
         // pegando os pedidos separados
         const dados = await DadosAPImetrica.findAndCountAll({
