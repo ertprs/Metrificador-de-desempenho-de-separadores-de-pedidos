@@ -2,6 +2,7 @@
 const sequelize = require('sequelize');
 const Op = sequelize.Op
 const DadosAPImetrica = require('../model/DadosAPImetrica')
+const separadores = ["JONATAS", "MICHEL", "GUILHERME", "RODRIGO", "EDMILSON", "DANIEL", "JHONNY", "JOSEPH", "THIAGO", "PAULO", "PAULO V.", "CARLOS", "MATHEUS A", "FERNANDO", "JOERBE", "PATRICK", "IVAN", "MARILIA"];
 
 module.exports = {
     async showDados(req, res) {
@@ -36,7 +37,8 @@ module.exports = {
 
         let { nome, dataInicio, dataFinal } = req.body
          console.log(dataInicio, dataFinal)
-
+        console.log("===================================================")
+        console.log(req.body)
         // pegando os pedidos separados
         const dados = await DadosAPImetrica.findAndCountAll({
             where: {
@@ -46,6 +48,7 @@ module.exports = {
                 }
             }
         })
+        
 
         // pegando os erros realizados
         const dados2 = await DadosAPImetrica.sum('ErrosSeparador', {

@@ -13,38 +13,37 @@ function limpardiv() {
     $("#desenhaGrafico").empty();
 }
 
-// carrego dados de todos os pedidos e erros que foram realizados por todos os  separadores
-async function pegarTodospedidos(){
-console.log("antes do foreach")
-    separadores.forEach(elemento => {
-        console.log(elemento)
-         await axios.get('http://localhost:3001/dados/Pedidos/Separados', {
-          nome: elemento, 
-          dataInicio: $("#datainicio").val(),
-          dataFinal: $("#datafinal").val()
-          
-        
-      })
-      .then(function (response) {
-        console.log(response.data[0]);
-        console.log("resolveu o foreach")
+// carrego dados de todos os pedidos e erros que foram realizados por todos os separadores
 
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
-      .finally(function () {
-        // always executed
-      });  
-        
-    });
-}
 
 
 async function graficoColunas() {
 
-   await pegarTodospedidos();
-console.log("depois do awair")
+         console.log("Data incio   "+$("#datainicio").val()) 
+         console.log("Data Final   "+$("#datafinal").val()) 
+         console.log(separadores)
+         axios.get('http://localhost:3001/dados/Pedidos/Separados', {
+            nome: elemento, 
+            dataInicio: $("#datainicio").val(),
+            dataFinal: $("#datafinal").val()
+            
+          
+        })
+        .then(function (response) {
+          console.log(response.data[0]);
+  
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+        .finally(function () {
+          // always executed
+        });  
+          
+      
+
+   
+
 
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Topping');
