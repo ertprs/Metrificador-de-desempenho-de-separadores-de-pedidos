@@ -1,6 +1,8 @@
 // Load the Visualization API and the corechart package.
 google.charts.load('current', { 'packages': ['corechart'] });
 
+var separadores = ["JONATAS", "MICHEL", "GUILHERME", "RODRIGO", "EDMILSON", "DANIEL", "JHONNY", "JOSEPH", "THIAGO", "PAULO", "PAULO V.", "CARLOS", "MATHEUS A", "FERNANDO", "JOERBE", "PATRICK", "IVAN", "MARILIA"]
+
 // Set a callback to run when the Google Visualization API is loaded.
 /* google.charts.setOnLoadCallback(drawChart); */
 
@@ -11,21 +13,22 @@ function limpardiv() {
     $("#desenhaGrafico").empty();
 }
 
-
-async function graficoColunas() {
-
-         console.log("Data incio   "+$("#datainicio").val()) 
-         console.log("Data Final   "+$("#datafinal").val()) 
-
-
-   await axios.post('http://localhost:3001/dados/data', {
-       
+// carrego dados de todos os pedidos e erros que foram realizados por todos os  separadores
+async function pegarTodospedidos(){
+console.log("antes do foreach")
+    separadores.forEach(elemento => {
+        console.log(elemento)
+         await axios.get('http://localhost:3001/dados/Pedidos/Separados', {
+          nome: elemento, 
           dataInicio: $("#datainicio").val(),
           dataFinal: $("#datafinal").val()
+          
         
       })
       .then(function (response) {
         console.log(response.data[0]);
+        console.log("resolveu o foreach")
+
       })
       .catch(function (error) {
         console.log(error);
@@ -33,11 +36,19 @@ async function graficoColunas() {
       .finally(function () {
         // always executed
       });  
+        
+    });
+}
 
+
+async function graficoColunas() {
+
+   await pegarTodospedidos();
+console.log("depois do awair")
 
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Topping');
-    data.addColumn('number', 'Slices');
+    data.addColumn('number', 'Slices' );
     data.addRows([
         ['Mushrooms', 3],
         ['Onions', 1],
