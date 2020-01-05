@@ -38,12 +38,8 @@ async function busca(param){
              response.data.forEach(element => {
                 total += Number(element.QtdTotal);
              });
-             console.log(total)
-
-
-            console.log(response.data[0].Conferente)
+             
             $("#inputCliente").val(response.data[0].CodigoCliente);
-    
             $("#inputFantasia").val(response.data[0].RazaoCliente);
             $("#inputFPg").val(response.data[0].ModalidadeCB);
             $("#inputFP").val(response.data[0].FormaParcelamento);
@@ -51,7 +47,6 @@ async function busca(param){
             $("#inputCliente").val(response.data[0].CodigoCliente);
             $("#inputData").val(response.data[0].Data);
             $("#inputHora").val(response.data[0].Hora);
-            //response.data[0].Hora
             $("#separador").val(response.data[0].Separador);
             $("#errosseparador").val(response.data[0].ErrosSeparador);
             $("#conferente").val(response.data[0].Conferente);
@@ -67,15 +62,14 @@ async function busca(param){
         }
 
         async function update(){
-           console.log($("#erroconferentes").val())
+         
             axios.put(`http://localhost:3001/update/dadosMetrica/`,{
                
                 NumeroPedido: $("#inputNPedido").val(),
                 ErrosConferentes: $("#erroconferentes").val()
 
             }).then(function (response){
-                console.log(response);
-
+                console.log(response)
                 $(".mensagem").empty();
                 $(".mensagem").append(`
                 <div class="alert alert-success alert-dismissible fade show">

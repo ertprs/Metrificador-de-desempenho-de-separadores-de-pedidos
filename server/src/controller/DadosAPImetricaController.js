@@ -33,38 +33,54 @@ module.exports = {
         return res.json(dados); 
     },
 
+
+    async ultimosBDinserts(req, res){
+        const dados =  await DadosAPImetrica.findAll({
+            limit: 5,
+            order: [ [ 'NumeroPedido', 'DESC' ],],
+        })
+        return res.json(dados);
+    },
+
+    async showdadosErrosSeparados(req, res) {
+        let errosSeparado = [];
+        console.log(req.query)
+        let {  dataInicio, dataFinal } = req.query
+        for(const separador of separadores){
+
+            const dados = await DadosAPImetrica.sum('ErrosSeparador', {
+                where: {
+                    SEPARADOR: separador,
+                    Data: {
+                        [Op.between]: [dataInicio, dataFinal]
+                    }
+                }
+            })
+            console.log(dados)
+            errosSeparado.push(dados)
+        }
+
+        return res.json(errosSeparado); 
+    },
+
     async showDadosPedidosSeparados(req, res) {
+        let pedidosSeparados = [];
+        let {  dataInicio, dataFinal } = req.query
 
-        let { nome, dataInicio, dataFinal } = req.body
-         console.log(dataInicio, dataFinal)
-        console.log("===================================================")
-        console.log(req.body)
-        // pegando os pedidos separados
-        const dados = await DadosAPImetrica.findAndCountAll({
-            where: {
-                SEPARADOR: nome,
-                Data: {
-                    [Op.between]: [dataInicio, dataFinal]
+            for(const separador of separadores){
+
+            const dados = await DadosAPImetrica.findAndCountAll({
+                where: {
+                    SEPARADOR: separador,
+                    Data: {
+                        [Op.between]: [dataInicio, dataFinal]
+                    }
                 }
-            }
-        })
-        
+            })
+            pedidosSeparados.push(dados.count)
+        }
 
-        // pegando os erros realizados
-        const dados2 = await DadosAPImetrica.sum('ErrosSeparador', {
-            where: {
-                SEPARADOR: nome,
-                Data: {
-                    [Op.between]: [dataInicio, dataFinal]
-                }
-            }
-        })
-
-        let resultado = new Object();
-        resultado.pedidosSeparados = dados.count; // pedidos separados
-        resultado.errosRealizados = dados2; // erros realizados
-
-        return res.json(resultado); 
+        return res.json(pedidosSeparados); 
 
     },
 
@@ -80,14 +96,14 @@ module.exports = {
                 }
             }
         })
-
+        console.log(dados)
         return res.json(dados); 
     },
 
     //Alterando dados no banco
     async alterDados(req, res) {
         const { NumeroPedido, ErrosConferentes } = req.body;
-
+        try{
         DadosAPImetrica.update(
             {
                 ErrosConferentes: ErrosConferentes,
@@ -102,14 +118,20 @@ module.exports = {
         )
 
         return res.json( {sucesso: "Dadods Alterados com Sucesso!"});
+        }catch{
+            return res.json("Cadastrado")
+        }
     },
 
 
     //Salvando no banco
     async storeDados(req, res) {
-
+        try{
         const dados = await DadosAPImetrica.create(req.body);
 
         return res.json(dados);
+        }catch{
+         return res.json("Cadastrado")   
+        }
     }
 } 

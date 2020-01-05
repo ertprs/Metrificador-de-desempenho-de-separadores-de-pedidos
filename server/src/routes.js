@@ -32,8 +32,13 @@ routes.get('/dadosMetrica/separador/:nome', DadosAPImetricaController.showDadosS
 
 routes.post('/dados/data', DadosAPImetricaController.showDadosData);
 
-//puxa pedidos entre datas
-routes.get('/dados/Pedidos/Separados', DadosAPImetricaController.showDadosPedidosSeparados)
+//retorna os pedidos de todos os separadores entre datas
+routes.get('/dados/Pedidos/Separados', DadosAPImetricaController.showDadosPedidosSeparados);
+//retorna os erros de todos os separadores entre datas
+routes.get('/dados/pedidos/errosSeparados', DadosAPImetricaController.showdadosErrosSeparados);
+
+//retorna os ultimos 5 pedidos feitos
+routes.get('/ultimosPedidos', DadosAPImetricaController.ultimosBDinserts);
 
 routes.post('/create/dadosMetrica', DadosAPImetricaController.storeDados);
 

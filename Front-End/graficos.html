@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-    <title>Title</title>
+    <title>Graficos</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,10 +13,10 @@
 
     <ul class="nav nav-pills nav-fill justify-content-center">
         <li class="nav-item">
-            <a class="nav-link " href="adicionar.html">Home</a>
+            <a class="nav-link " href="adicionar.html">Separador</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link " href="editar.html">Editar</a>
+            <a class="nav-link " href="editar.html">Conferente</a>
         </li>
         <li class="nav-item">
             <a class="nav-link active" href="#">Graficos</a>
@@ -27,29 +27,13 @@
 </head>
 
 <body>
+    <div class="mensagem"></div>
     <div class="row mt-5">
         <div class="form-group col-md-4 col-sm-12 col-lg-4 ml-5">
-            <label for="sel1">Selecione o separador</label>
+            <label for="sel1">Selecionar Grafico</label>
             <select class="form-control " id="sel1">
-                    <option value="TODOS">Todos</option>
-                    <option value="JONATAS">JONATAS</option>
-                    <option value="MICHEL">MICHEL</option>
-                    <option value="GUILHERME">GUILHERME</option>
-                    <option value="RODRIGO">RODRIGO</option>
-                    <option value="EDMILSON">EDMILSON</option>
-                    <option value="DANIEL">DANIEL</option>
-                    <option value="JHONNY">JHONNY</option>
-                    <option value="JOSEPH">JOSEPH</option>
-                    <option value="THIAGO">THIAGO</option>
-                    <option value="PAULO">PAULO</option>
-                    <option value="PAULO V.">PAULO V.</option>
-                    <option value="CARLOS">CARLOS</option>
-                    <option value="MATHEUS A">MATHEUS A</option>
-                    <option value="FERNANDO">FERNANDO</option>
-                    <option value="JOERBE">JOERBE</option>
-                    <option value="PATRICK">PATRICK</option>
-                    <option value="IVAN">IVAN</option>
-                    <option value="MARILIA">MARILIA</option>
+                    <option value="Erros">Erros</option>
+                    <option value="Pedidos">Pedidos</option>
         </select>
         </div>
 
@@ -75,7 +59,7 @@
         </div>
 
         <div class="btn-group mr-4 mt-4" role="group">
-            <button type="button" class="btn btn-primary " onclick="limpardiv(); graficoCombo()">Gráfico Combo</button>
+            <button type="button" class="btn btn-primary " onclick="limpardiv(); graficoRosquinha()">Gráfico Rosquinha</button>
         </div>
 
         <div class="btn-group mt-4" role="group">

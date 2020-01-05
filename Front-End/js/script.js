@@ -32,9 +32,7 @@ axios.get(
     `http://localhost:3001/pedidosapi/${param}`)
     .then(function(response){
 
-        console.log(response.data)
         $("#inputCliente").val(response.data[0].CodigoCliente);
-
         $("#inputFantasia").val(response.data[0].RazaoCliente);
         $("#inputFPg").val(response.data[0].ModalidadeCB);
         $("#inputFP").val(response.data[0].FormaParcelamento);
@@ -42,23 +40,23 @@ axios.get(
         $("#inputCliente").val(response.data[0].CodigoCliente);
         $("#inputData").val(response.data[0].Data)
         $("#inputHora").val(response.data[0].Hora)
-        //response.data[0].Hora
+     
 
         axios.get(
             `http://localhost:3001/produtosapi/${param}`,
             {}
             )
             .then(function(response){
-                    console.log(response)
+                   
              let total = 0 ;
              response.data.forEach(element => {
-                total += element.Quantidade;
+             total += element.Quantidade;
              });
                 
              $("#inputitens").val(response.data.length);
              $("#inputQTDtotal").val(total);
 
-            console.log(total)
+      
 
             }).catch(function (error){
                 console.error(error)
@@ -98,7 +96,17 @@ axios.get(
             "Conferente": 'conferido'
 
         }).then(function (response){
-            console.log(response);
+          
+            if(response.data == "Cadastrado"){
+                $(".mensagem").empty();
+                $(".mensagem").append(`
+                <div class="alert alert-danger alert-dismissible fade show">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Pedido ja foi cadastrado, verifique os dados e tente novamente.</strong>
+            </div>
+                
+                `);
+            }else{
             $(".mensagem").empty();
             $(".mensagem").append(`
             <div class="alert alert-success alert-dismissible fade show">
@@ -108,7 +116,7 @@ axios.get(
             
             `);
             limparcampos();
-            
+            }
         }).catch(function (error){
             console.error(error);
             $(".mensagem").empty();
@@ -122,3 +130,43 @@ axios.get(
             alert("Errou")
         })
     }
+
+    async function carregaPedidos(){
+        axios.get(
+            `http://localhost:3001/ultimosPedidos`,
+            {}
+            )
+            .then(function(response){
+            
+                response.data.forEach(element =>{
+                   
+
+                    $("tbody").append(`
+                    
+                    <tr onclick="carregaeste(${element.NumeroPedido})";>
+                        <th scope="row">${element.NumeroPedido}</th>
+                        <td>${moment(element.Data).format('DD-MM-YYYY')}</td>
+                        <td>${element.Hora}</td>
+                        <td>${element.CodigoCliente}</td>
+                        <td>${element.RazaoCliente}</td>
+                        <td>${element.Itens}</td>
+                        <td>${element.QtdTotal}</td>
+                        <td>${element.Separador}</td>
+                        
+                        </tr>
+                    
+                    `)
+                })
+
+            }).catch(function (error){
+                console.error(error)
+            })
+     
+
+      }
+    function carregaeste(npedido){
+        $("#inputNPedido").val(npedido);
+        busca(npedido)
+        location.href = "#menu";
+    }
+      carregaPedidos();
