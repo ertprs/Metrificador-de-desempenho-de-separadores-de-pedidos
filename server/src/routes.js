@@ -6,6 +6,7 @@ const PedidosVendaProdutosController = require('./controller/PedidosVendaProduto
 const ProdutoController = require('./controller/ProdutoController');
 const PedidosapiController = require('./controller/PedidosapiController');
 const ProdutosApiController = require('./controller/ProdutosApiController')
+const AuthController = require('./controller/AuthController');
 
 const DadosAPImetricaController = require('./controller/DadosAPImetricaController')
 
@@ -43,5 +44,13 @@ routes.get('/ultimosPedidos', DadosAPImetricaController.ultimosBDinserts);
 routes.post('/create/dadosMetrica', DadosAPImetricaController.storeDados);
 
 routes.put('/update/dadosMetrica', DadosAPImetricaController.alterDados);
+
+//auth
+// login
+routes.post('/auth/login', AuthController.login);
+
+// register
+routes.post('/auth/register',AuthController.register);
+
 
 module.exports = routes;

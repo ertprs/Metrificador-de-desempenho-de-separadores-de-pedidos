@@ -18,3 +18,10 @@ create table dadosAPImetrica(
 `Itens` varchar(5),
 `QtdTotal` varchar(10)
 );
+
+create table authuser(
+`id` integer(50)  primary key auto_increment not null,
+`name` varchar(150)  not null,
+`email` varchar(100) not null,
+`password` varchar(75) not null
+);

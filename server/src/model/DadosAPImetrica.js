@@ -1,5 +1,3 @@
-
-
 const { Model, DataTypes } = require('sequelize');
 
 class dadosAPImetrica extends Model {
@@ -16,10 +14,6 @@ class dadosAPImetrica extends Model {
             type: DataTypes.INTEGER(10).UNSIGNED,
             allowNull: true
           },
-          /* Telefone1: {
-            type: DataTypes.STRING(150),
-            allowNull: true
-          }, */
           RazaoCliente: {
             type: DataTypes.STRING(100),
             allowNull: true
@@ -36,10 +30,6 @@ class dadosAPImetrica extends Model {
             type: DataTypes.TIME,
             allowNull: true
           },
-          /* CodigoVendedor: {
-            type: DataTypes.INTEGER(10).UNSIGNED,
-            allowNull: true
-          }, */
           Vendedor: {
             type: DataTypes.STRING(100),
             allowNull: true
@@ -48,10 +38,6 @@ class dadosAPImetrica extends Model {
             type: DataTypes.STRING(25),
             allowNull: true
           },
-          /* Cidade: {
-            type: DataTypes.STRING(150),
-            allowNull: true
-          }, */
           Separador: {
             type: DataTypes.STRING(50),
             allowNull: true

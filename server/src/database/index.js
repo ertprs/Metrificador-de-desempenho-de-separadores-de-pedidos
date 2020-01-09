@@ -11,6 +11,7 @@ const PedidosApi = require('../model/pedidosapi');
 const ProdutosApi = require('../model/produtosapi')
 
 const DadosAPImetrica = require('../model/DadosAPImetrica')
+const authuser = require('../model/authuser');
 
 const connection = new Sequelize(dbConfig);
 const connection2 = new Sequelize(dbConfig2)
@@ -22,6 +23,7 @@ PedidosApi.init(connection);
 ProdutosApi.init(connection);
 
 DadosAPImetrica.init(connection2);
+authuser.init(connection2);
 
 
 module.exports = connection;
