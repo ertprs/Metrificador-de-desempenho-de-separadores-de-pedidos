@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const sequelize = require('sequelize');
 const bd = require('./config/database')
+require('dotenv').config();
 
 const app = express();
 
@@ -24,6 +25,11 @@ app.get('/register', async (req, res) => {
 /* app.get('/findall', (req, res) => {
   res.json('Im in Find All');
 }); */
+
+
+
+
+
 
 app.put('/update/:id', (req, res) => {
   res.json('Im in update');

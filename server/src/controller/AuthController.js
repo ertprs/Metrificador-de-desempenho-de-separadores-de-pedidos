@@ -3,7 +3,9 @@ const saltRounds = 10;
 const sequelize = require('sequelize');
 const Op = sequelize.Op
 const authuser = require('../model/authuser')
+require('dotenv').config();
 
+var jwt = require('jsonwebtoken');
 
 module.exports = {
 
@@ -21,8 +23,17 @@ module.exports = {
            } else {
   bcrypt.compare(req.body.password, user.password, function (err, result) {
           if (result == true) {
+
+            const id = user.id;
+            var token = jwt.sign({ id }, process.env.SECRET, {
+              expiresIn: 300 // expires in 5min
+            });
+            res.status(200).send({ auth: true, token: token });
+
+
+            console.log(process.env.SECRET)
             console.log("Logado  /home ")
-              res.redirect('/home');
+              //res.redirect('/home');
           } else {
            
             console.log("senha errada")
@@ -58,6 +69,11 @@ module.exports = {
             }); 
 
 
+    },
+
+    async logout (req,res){
+        console.log("aqui")
+        res.status(200).send({ auth: false, token: null });
     }
 
 }

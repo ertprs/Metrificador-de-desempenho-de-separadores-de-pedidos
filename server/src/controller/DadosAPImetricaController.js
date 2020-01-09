@@ -33,7 +33,7 @@ module.exports = {
         return res.json(dados); 
     },
 
-
+// pega os ultimos 5 pedidos
     async ultimosBDinserts(req, res){
         const dados =  await DadosAPImetrica.findAll({
             limit: 5,
@@ -134,4 +134,6 @@ module.exports = {
          return res.json("Cadastrado")   
         }
     }
+
+   
 } 
