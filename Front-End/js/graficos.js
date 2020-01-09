@@ -1,3 +1,23 @@
+var token = localStorage.getItem("CGauthtoken");
+
+function logout(){
+  localStorage.setItem("CGauthtoken", undefined);
+  window.location.assign("./index.html");          
+}
+
+function limpaauth(error){
+
+  if( error == 'Request failed with status code 511'){
+      alert('Favor faça Login novamente');
+      localStorage.setItem("CGauthtoken", undefined);
+      window.location.assign("./index.html");          
+  
+  }
+
+  
+}
+
+var config = 
 // Load the Visualization API and the corechart package.
 google.charts.load('current', { 'packages': ['corechart'] });
 
@@ -15,6 +35,8 @@ async function graficoColunas() {
         let pedidosSeparados = [];
 
          axios.get('http://localhost:3001/dados/Pedidos/Separados', {
+          
+            headers: { 'x-access-token': token },        
             params:{
             dataInicio: $("#datainicio").val(),
             dataFinal: $("#datafinal").val()
@@ -46,6 +68,7 @@ async function graficoColunas() {
 
         })
         .catch(function (error) {
+          limpaauth(error.message);  
           console.error(error);
         })
  
@@ -55,12 +78,14 @@ async function graficoColunas() {
         let pedidosSeparados = [];
 
         axios.get('http://localhost:3001/dados/pedidos/errosSeparados', {
-           params:{
-           dataInicio: $("#datainicio").val(),
-           dataFinal: $("#datafinal").val()
-           }
-         
-       })
+          
+            headers: { 'x-access-token': token },        
+            params:{
+            dataInicio: $("#datainicio").val(),
+            dataFinal: $("#datafinal").val()
+            }
+          
+        })
        .then(function (response) {
          pedidosSeparados = response.data;
          let errosformatado = [];
@@ -86,6 +111,7 @@ async function graficoColunas() {
 
        })
        .catch(function (error) {
+        limpaauth(error.message);  
          console.error(error);
        })
   
@@ -111,6 +137,8 @@ function graficoBar() {
         let pedidosSeparados = [];
 
          axios.get('http://localhost:3001/dados/Pedidos/Separados', {
+          
+            headers: { 'x-access-token': token },        
             params:{
             dataInicio: $("#datainicio").val(),
             dataFinal: $("#datafinal").val()
@@ -143,6 +171,7 @@ function graficoBar() {
 
         })
         .catch(function (error) {
+          limpaauth(error.message);  
           console.error(error);
         })
  
@@ -152,12 +181,14 @@ function graficoBar() {
         let pedidosSeparados = [];
 
         axios.get('http://localhost:3001/dados/pedidos/errosSeparados', {
-           params:{
-           dataInicio: $("#datainicio").val(),
-           dataFinal: $("#datafinal").val()
-           }
-         
-       })
+          
+            headers: { 'x-access-token': token },        
+            params:{
+            dataInicio: $("#datainicio").val(),
+            dataFinal: $("#datafinal").val()
+            }
+          
+        })
        .then(function (response) {
          pedidosSeparados = response.data;
 
@@ -184,6 +215,7 @@ function graficoBar() {
 
        })
        .catch(function (error) {
+        limpaauth(error.message);  
          console.error(error);
        })
   
@@ -206,6 +238,8 @@ function graficoRosquinha() {
         let pedidosSeparados = [];
 
          axios.get('http://localhost:3001/dados/Pedidos/Separados', {
+          
+            headers: { 'x-access-token': token },        
             params:{
             dataInicio: $("#datainicio").val(),
             dataFinal: $("#datafinal").val()
@@ -236,6 +270,7 @@ function graficoRosquinha() {
 
         })
         .catch(function (error) {
+          limpaauth(error.message);  
           console.error(error);
         })
  
@@ -245,12 +280,14 @@ function graficoRosquinha() {
         let pedidosSeparados = [];
 
         axios.get('http://localhost:3001/dados/pedidos/errosSeparados', {
-           params:{
-           dataInicio: $("#datainicio").val(),
-           dataFinal: $("#datafinal").val()
-           }
-         
-       })
+          
+            headers: { 'x-access-token': token },        
+            params:{
+            dataInicio: $("#datainicio").val(),
+            dataFinal: $("#datafinal").val()
+            }
+          
+        })
        .then(function (response) {
          pedidosSeparados = response.data;
          let errosformatado = [['Pedidos','Pedidos pela data']];
@@ -274,6 +311,7 @@ function graficoRosquinha() {
 
        })
        .catch(function (error) {
+        limpaauth(error.message);  
          console.error(error);
        })
   
@@ -299,6 +337,8 @@ function graficopizza3d() {
         let pedidosSeparados = [];
 
          axios.get('http://localhost:3001/dados/Pedidos/Separados', {
+          
+            headers: { 'x-access-token': token },        
             params:{
             dataInicio: $("#datainicio").val(),
             dataFinal: $("#datafinal").val()
@@ -329,6 +369,7 @@ function graficopizza3d() {
 
         })
         .catch(function (error) {
+          limpaauth(error.message);  
           console.error(error);
         })
  
@@ -338,12 +379,14 @@ function graficopizza3d() {
         let pedidosSeparados = [];
 
         axios.get('http://localhost:3001/dados/pedidos/errosSeparados', {
-           params:{
-           dataInicio: $("#datainicio").val(),
-           dataFinal: $("#datafinal").val()
-           }
-         
-       })
+          
+            headers: { 'x-access-token': token },        
+            params:{
+            dataInicio: $("#datainicio").val(),
+            dataFinal: $("#datafinal").val()
+            }
+          
+        })
        .then(function (response) {
          pedidosSeparados = response.data;
          let errosformatado = [['Pedidos','Pedidos pela data']];
@@ -367,6 +410,7 @@ function graficopizza3d() {
 
        })
        .catch(function (error) {
+        limpaauth(error.message);  
          console.error(error);
        })
   

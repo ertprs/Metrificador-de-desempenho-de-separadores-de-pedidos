@@ -1,4 +1,4 @@
-
+const url = 'http://localhost:3001';
 (function ($) {
     "use strict";
 
@@ -85,3 +85,29 @@
 
 
 })(jQuery);
+
+
+function login(){
+
+    axios.post( url+'/auth/login',{
+        "password": $("#senha").val(),
+        "email": $("#email").val()
+    } )
+    .then( (resp) =>{
+
+        localStorage.setItem("CGauthtoken", resp.data.token);
+        window.location.assign("./adicionar.html");
+    })
+    .catch( (err)=>{
+        console.error(err);
+        $(".mensagem").empty();
+                $(".mensagem").append(`
+                <div class="alert alert-danger alert-dismissible fade show">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>E-mail ou senha Incorretos favor verifique suas credenciais e tente novamente.</strong>
+                </div>
+                
+                `);
+    })
+
+}

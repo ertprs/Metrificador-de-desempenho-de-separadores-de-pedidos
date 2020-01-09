@@ -1,3 +1,19 @@
+var token = localStorage.getItem("CGauthtoken");
+function logout(){
+    localStorage.setItem("CGauthtoken", undefined);
+    window.location.assign("./index.html");          
+}
+function limpaauth(error){
+
+    if( error == 'Request failed with status code 511'){
+        alert('Favor faça Login novamente');
+        localStorage.setItem("CGauthtoken", undefined);
+        window.location.assign("./index.html");          
+    
+    }
+
+    
+}
 
 $("#inputNPedido").keydown(function(e){
     
@@ -29,7 +45,9 @@ function limparcampos(){
 async function busca(param){
 
 axios.get(
-    `http://localhost:3001/pedidosapi/${param}`)
+    `http://localhost:3001/pedidosapi/${param}`,{
+        headers: { 'x-access-token': token }
+    })
     .then(function(response){
 
         $("#inputCliente").val(response.data[0].CodigoCliente);
@@ -44,7 +62,9 @@ axios.get(
 
         axios.get(
             `http://localhost:3001/produtosapi/${param}`,
-            {}
+            {
+                headers: { 'x-access-token': token }
+            }
             )
             .then(function(response){
                    
@@ -60,9 +80,11 @@ axios.get(
 
             }).catch(function (error){
                 console.error(error)
+                limpaauth(error.message);   
             })
       }).catch(function (error){
-          console.error(error)
+        limpaauth(error.message);   
+          
           $(".mensagem").append(`
             <div class="alert alert-danger alert-dismissible fade show">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -95,6 +117,8 @@ axios.get(
             "ErrosSeparador": $("#errosseparador").val(),
             "Conferente": 'conferido'
 
+        },{
+            headers: { 'x-access-token': token }
         }).then(function (response){
           
             if(response.data == "Cadastrado"){
@@ -118,6 +142,7 @@ axios.get(
             limparcampos();
             }
         }).catch(function (error){
+            limpaauth(error.message);   
             console.error(error);
             $(".mensagem").empty();
             $(".mensagem").append(`
@@ -134,8 +159,9 @@ axios.get(
     async function carregaPedidos(){
         axios.get(
             `http://localhost:3001/ultimosPedidos`,
-            {}
-            )
+            {
+                headers: { 'x-access-token': token }
+            })
             .then(function(response){
             
                 response.data.forEach(element =>{
@@ -159,8 +185,12 @@ axios.get(
                 })
 
             }).catch(function (error){
-                console.error(error)
-            })
+
+                limpaauth(error.message);                 
+                
+                }
+
+            )
      
 
       }

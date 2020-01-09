@@ -26,14 +26,11 @@ module.exports = {
 
             const id = user.id;
             var token = jwt.sign({ id }, process.env.SECRET, {
-              expiresIn: 300 // expires in 5min
+              expiresIn: '1d' // expires in 5min
             });
             res.status(200).send({ auth: true, token: token });
 
-
-            console.log(process.env.SECRET)
-            console.log("Logado  /home ")
-              //res.redirect('/home');
+     
           } else {
            
             console.log("senha errada")

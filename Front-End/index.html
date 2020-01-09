@@ -28,11 +28,11 @@
 <!--===============================================================================================-->
 </head>
 <body>
-	
+	<div class="mensagem"></div>
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.png');">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" onsubmit="event.preventDefault()" >
 					<span class="login100-form-logo">
 						<img src="images/famart.jfif"></i>
 					</span>
@@ -41,13 +41,13 @@
 						
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Usuario">
-						<input class="input100" type="text" name="username" placeholder="Usuario">
+					<div class="wrap-input100 validate-input" data-validate = "E-mail">
+						<input class="input100" type="text" name="email" placeholder="E-mail" id="email">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Senha">
-						<input class="input100" type="password" name="pass" placeholder="Senha">
+						<input class="input100" type="password" name="pass" placeholder="Senha" id="senha">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 
@@ -59,7 +59,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" onclick="login()">
 							Login
 						</button>
 					</div>
@@ -87,6 +87,7 @@
 <!--===============================================================================================-->
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="js/main.js"></script>
 
 </body>

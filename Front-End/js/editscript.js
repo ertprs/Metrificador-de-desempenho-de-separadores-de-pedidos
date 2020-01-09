@@ -1,3 +1,21 @@
+var token = localStorage.getItem("CGauthtoken");
+
+function logout(){
+    localStorage.setItem("CGauthtoken", undefined);
+    window.location.assign("./index.html");          
+}
+
+function limpaauth(error){
+
+    if( error == 'Request failed with status code 511'){
+        alert('Favor faça Login novamente');
+        localStorage.setItem("CGauthtoken", undefined);
+        window.location.assign("./index.html");          
+    
+    }
+
+    
+}
 
 $("#inputNPedido").keydown(function(e){
     
@@ -31,7 +49,9 @@ function limparcampos(){
 async function busca(param){
 
     axios.get(
-        `http://localhost:3001/dadosMetrica/${param}`)
+        `http://localhost:3001/dadosMetrica/${param}`, {
+            headers: { 'x-access-token': token }
+        })
         .then(function(response){
 
             total = 0;
@@ -55,6 +75,7 @@ async function busca(param){
 
            
           }).catch(function (error){
+            limpaauth(error.message);  
               console.error(error)
     
           })
@@ -68,6 +89,8 @@ async function busca(param){
                 NumeroPedido: $("#inputNPedido").val(),
                 ErrosConferentes: $("#erroconferentes").val()
 
+            }, {
+                headers: { 'x-access-token': token }
             }).then(function (response){
                 console.log(response)
                 $(".mensagem").empty();
@@ -81,6 +104,7 @@ async function busca(param){
                 limparcampos();
 
             }).catch(function (error){
+                limpaauth(error.message);  
                 console.error(error);
                 $(".mensagem").empty();
                 $(".mensagem").append(`

@@ -64,6 +64,7 @@ module.exports = {
     },
 
     async showDadosPedidosSeparados(req, res) {
+     
         let pedidosSeparados = [];
         let {  dataInicio, dataFinal } = req.query
 
