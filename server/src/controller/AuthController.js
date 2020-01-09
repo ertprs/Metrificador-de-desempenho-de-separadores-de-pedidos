@@ -25,10 +25,11 @@ module.exports = {
           if (result == true) {
 
             const id = user.id;
+            const name = user.name;
             var token = jwt.sign({ id }, process.env.SECRET, {
-              expiresIn: '1d' // expires in 5min
+              expiresIn: '1d' 
             });
-            res.status(200).send({ auth: true, token: token });
+            res.status(200).send({ name: name, auth: true, token: token });
 
      
           } else {
@@ -45,15 +46,11 @@ module.exports = {
     },
 
     async register(req, res) {
-      console.log(req.body.name);
-      console.log(req.body.password);
-      console.log(req.body.email);
-
 
       //const dados = await authuser.create(req.body);
       //return res.json(dados);
         bcrypt.hash(req.body.password, saltRounds, function (err,   hash) {
-            console.log(hash);
+            
             authuser.create({
               name: req.body.name,
               email: req.body.email,

@@ -96,6 +96,7 @@ function login(){
     .then( (resp) =>{
 
         localStorage.setItem("CGauthtoken", resp.data.token);
+        localStorage.setItem("CGusername", resp.data.name);
         window.location.assign("./adicionar.html");
     })
     .catch( (err)=>{

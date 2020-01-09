@@ -1,4 +1,5 @@
 var token = localStorage.getItem("CGauthtoken");
+conferente = localStorage.getItem("CGusername");
 function logout(){
     localStorage.setItem("CGauthtoken", undefined);
     window.location.assign("./index.html");          
@@ -109,13 +110,13 @@ axios.get(
             "ModalidadeCB": $("#inputFPg").val(),
             "FormaParcelamento": $("#inputFP").val(),
             "Vendedor": $("#inputVendedor").val(),
-           "Data": $("#inputData").val(),
+            "Data": $("#inputData").val(),
             "Hora": $("#inputHora").val(),
             "Itens": $("#inputitens").val(),
             "QtdTotal": $("#inputQTDtotal").val(),
             "Separador":  $("#separador").val(),
             "ErrosSeparador": $("#errosseparador").val(),
-            "Conferente": 'conferido'
+            "Conferente": conferente
 
         },{
             headers: { 'x-access-token': token }
